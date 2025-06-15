@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'audiowide': ['Audiowide', 'sans-serif'],
+				'manrope': ['Manrope', 'sans-serif'],
+				'pacifico': ['Pacifico', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +67,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// RevSquared AI Brand Colors
+				'neon-aqua': '#00E5D6',
+				'hot-magenta': '#E536C1',
+				'cyber-yellow': '#FEDD4D',
+				'purple-grape': '#6233EA',
+				'deep-violet': '#20215A',
+				'soft-lavender': '#D3D4FF',
+				'charcoal-black': '#0D0D0D',
+				'bright-white': '#F5F5F5'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +99,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(0, 229, 214, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(0, 229, 214, 0.6)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
 			}
 		}
 	},

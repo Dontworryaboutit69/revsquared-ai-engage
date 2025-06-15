@@ -1,12 +1,416 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [formStep, setFormStep] = useState(0);
+  const [formData, setFormData] = useState({
+    businessType: '',
+    monthlyLeads: '',
+    currentChallenges: '',
+    name: '',
+    email: '',
+    phone: '',
+    companyName: ''
+  });
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formStep < 3) {
+      setFormStep(formStep + 1);
+    } else {
+      toast({
+        title: "Thanks for your interest!",
+        description: "We'll be in touch within 24 hours to discuss your custom AI solution.",
+      });
+    }
+  };
+
+  const updateFormData = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6233EA]/20 via-[#20215A]/30 to-[#0D0D0D]" />
+        <div className="relative z-10 text-center max-w-6xl mx-auto">
+          {/* Logo */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <div className="w-24 h-24 bg-[#00E5D6] rounded-lg flex items-center justify-center shadow-lg shadow-[#00E5D6]/30">
+                <span className="text-[#0D0D0D] text-4xl font-bold">R²</span>
+                <Phone className="absolute -top-2 -right-2 w-8 h-8 text-[#E536C1]" />
+              </div>
+            </div>
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" 
+              style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            RevSquared AI
+          </h1>
+          
+          <h2 className="text-2xl md:text-4xl mb-8 text-[#D3D4FF]" 
+              style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            Voice & SMS AI Agents That Handle Your Leads While You Sleep
+          </h2>
+          
+          <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" 
+             style={{ fontFamily: 'Manrope, sans-serif' }}>
+            Stop losing leads to missed calls and slow responses. Our custom AI agents qualify prospects, 
+            book appointments, and integrate seamlessly with your CRM — 24/7/365.
+          </p>
+          
+          {/* Video Component Placeholder */}
+          <div className="mb-12 max-w-4xl mx-auto">
+            <div className="aspect-video bg-gradient-to-br from-[#6233EA] to-[#20215A] rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-[#E536C1] rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-[#F5F5F5] ml-1" />
+                </div>
+                <p className="text-[#D3D4FF] text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Watch How AI Transforms Your Business
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <Button 
+            size="lg" 
+            className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105"
+            style={{ fontFamily: 'Audiowide, sans-serif' }}
+            onClick={() => document.getElementById('qualification-form')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Get Your Custom AI Solution
+          </Button>
+        </div>
+        
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowDown className="w-8 h-8 text-[#00E5D6]" />
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#20215A]/30 to-[#6233EA]/20" />
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#E536C1]" 
+              style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            The Lead Generation Problem
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
+              <CardHeader>
+                <Phone className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
+                <CardTitle className="text-[#00E5D6] text-2xl" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                  Missed Calls = Lost Revenue
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#D3D4FF] text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Studies show 85% of leads go to competitors when you don't answer within 5 minutes.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
+              <CardHeader>
+                <Microchip className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
+                <CardTitle className="text-[#00E5D6] text-2xl" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                  Manual Follow-ups Fail
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#D3D4FF] text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Your team can't scale personal outreach. Leads slip through the cracks daily.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
+              <CardHeader>
+                <Lightbulb className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
+                <CardTitle className="text-[#00E5D6] text-2xl" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                  Inconsistent Qualification
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[#D3D4FF] text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Different team members qualify leads differently, creating chaos in your pipeline.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-l from-[#6233EA]/20 to-[#20215A]/30" />
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#00E5D6]" 
+              style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            The AI Solution
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h3 className="text-3xl font-bold mb-6 text-[#E536C1]" 
+                  style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                24/7 AI Agents That Never Sleep
+              </h3>
+              <ul className="space-y-4 text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <li className="flex items-start">
+                  <span className="text-[#00E5D6] mr-3">✓</span>
+                  Answer every call within 2 rings, every time
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#00E5D6] mr-3">✓</span>
+                  Qualify leads with perfect consistency using your criteria
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#00E5D6] mr-3">✓</span>
+                  Book appointments directly into your calendar
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#00E5D6] mr-3">✓</span>
+                  Send SMS follow-ups automatically
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#00E5D6] mr-3">✓</span>
+                  Integrate seamlessly with your existing CRM
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-[#6233EA]/30 to-[#20215A]/50 p-8 rounded-2xl border border-[#00E5D6]/30">
+              <Grid2x2 className="w-20 h-20 text-[#FEDD4D] mx-auto mb-6" />
+              <h4 className="text-2xl font-bold mb-4 text-[#00E5D6]" 
+                  style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                Custom Built For Your Business
+              </h4>
+              <p className="text-[#D3D4FF] text-lg" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                Every AI agent is tailored to your industry, products, and sales process. 
+                Not a one-size-fits-all solution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CRM Integration Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-[#20215A]/50 to-[#6233EA]/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-[#00E5D6]" 
+              style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            Seamless CRM Integration
+          </h2>
+          <p className="text-xl mb-12 text-[#D3D4FF]" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            We connect with the tools you already use
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+            {['GHL', 'Roofr', 'Aqulinx', 'Podium', 'More'].map((crm, index) => (
+              <div key={index} className="bg-[#F5F5F5]/10 p-6 rounded-xl border border-[#E536C1]/30 backdrop-blur-sm">
+                <div className="text-[#00E5D6] text-xl font-bold" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                  {crm}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Qualification Form */}
+      <section id="qualification-form" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#E536C1]" 
+                style={{ fontFamily: 'Audiowide, sans-serif' }}>
+              Is AI Right For Your Business?
+            </h2>
+            <p className="text-xl text-[#D3D4FF]" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Take our quick assessment to find out (Step {formStep + 1} of 4)
+            </p>
+          </div>
+          
+          <Card className="bg-[#20215A]/30 border-[#00E5D6]/30 backdrop-blur-sm">
+            <CardContent className="p-8">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                {formStep === 0 && (
+                  <div className="space-y-6">
+                    <div>
+                      <Label htmlFor="businessType" className="text-[#00E5D6] text-lg font-semibold">
+                        What type of business do you run?
+                      </Label>
+                      <Input
+                        id="businessType"
+                        value={formData.businessType}
+                        onChange={(e) => updateFormData('businessType', e.target.value)}
+                        placeholder="e.g., Home Services, Real Estate, Solar, etc."
+                        className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5] placeholder-[#D3D4FF]/70"
+                        required
+                      />
+                    </div>
+                  </div>
+                )}
+                
+                {formStep === 1 && (
+                  <div className="space-y-6">
+                    <div>
+                      <Label htmlFor="monthlyLeads" className="text-[#00E5D6] text-lg font-semibold">
+                        How many leads do you get per month?
+                      </Label>
+                      <Input
+                        id="monthlyLeads"
+                        value={formData.monthlyLeads}
+                        onChange={(e) => updateFormData('monthlyLeads', e.target.value)}
+                        placeholder="e.g., 50-100, 100-500, 500+"
+                        className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5] placeholder-[#D3D4FF]/70"
+                        required
+                      />
+                    </div>
+                  </div>
+                )}
+                
+                {formStep === 2 && (
+                  <div className="space-y-6">
+                    <div>
+                      <Label htmlFor="currentChallenges" className="text-[#00E5D6] text-lg font-semibold">
+                        What's your biggest challenge with lead management?
+                      </Label>
+                      <Textarea
+                        id="currentChallenges"
+                        value={formData.currentChallenges}
+                        onChange={(e) => updateFormData('currentChallenges', e.target.value)}
+                        placeholder="Tell us about missed calls, slow follow-ups, qualification issues..."
+                        className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5] placeholder-[#D3D4FF]/70"
+                        rows={4}
+                        required
+                      />
+                    </div>
+                  </div>
+                )}
+                
+                {formStep === 3 && (
+                  <div className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="name" className="text-[#00E5D6] text-lg font-semibold">
+                          Full Name
+                        </Label>
+                        <Input
+                          id="name"
+                          value={formData.name}
+                          onChange={(e) => updateFormData('name', e.target.value)}
+                          className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5]"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="companyName" className="text-[#00E5D6] text-lg font-semibold">
+                          Company Name
+                        </Label>
+                        <Input
+                          id="companyName"
+                          value={formData.companyName}
+                          onChange={(e) => updateFormData('companyName', e.target.value)}
+                          className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5]"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="email" className="text-[#00E5D6] text-lg font-semibold">
+                          Email Address
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => updateFormData('email', e.target.value)}
+                          className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5]"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="phone" className="text-[#00E5D6] text-lg font-semibold">
+                          Phone Number
+                        </Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => updateFormData('phone', e.target.value)}
+                          className="mt-2 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-[#F5F5F5]"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="flex justify-between items-center pt-6">
+                  {formStep > 0 && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setFormStep(formStep - 1)}
+                      className="border-[#E536C1] text-[#E536C1] hover:bg-[#E536C1] hover:text-[#0D0D0D]"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    >
+                      <ArrowUp className="w-4 h-4 mr-2 rotate-180" />
+                      Previous
+                    </Button>
+                  )}
+                  
+                  <Button
+                    type="submit"
+                    className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 ml-auto"
+                    style={{ fontFamily: 'Audiowide, sans-serif' }}
+                  >
+                    {formStep < 3 ? (
+                      <>
+                        Next Step
+                        <ArrowDown className="w-4 h-4 ml-2 rotate-90" />
+                      </>
+                    ) : (
+                      'Get My Custom AI Solution'
+                    )}
+                  </Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-[#20215A]/50 border-t border-[#00E5D6]/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <div className="w-16 h-16 bg-[#00E5D6] rounded-lg flex items-center justify-center">
+              <span className="text-[#0D0D0D] text-2xl font-bold">R²</span>
+            </div>
+          </div>
+          <p className="text-[#D3D4FF] mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            © 2025 RevSquared AI. Old school cool. New school smart.
+          </p>
+          <p className="text-[#D3D4FF]/70 text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            Transform your business with custom AI agents that work 24/7
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
