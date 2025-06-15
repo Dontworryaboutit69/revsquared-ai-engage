@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -45,12 +44,11 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-6xl mx-auto">
           {/* Logo */}
           <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="w-24 h-24 bg-[#00E5D6] rounded-lg flex items-center justify-center shadow-lg shadow-[#00E5D6]/30">
-                <span className="text-[#0D0D0D] text-4xl font-bold">R²</span>
-                <Phone className="absolute -top-2 -right-2 w-8 h-8 text-[#E536C1]" />
-              </div>
-            </div>
+            <img 
+              src="/lovable-uploads/d64a4e8e-0ca8-4662-b3ba-05c284992535.png" 
+              alt="RevSquared AI Logo" 
+              className="w-48 h-48 object-contain"
+            />
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" 
