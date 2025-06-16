@@ -72,9 +72,7 @@ const Index = () => {
               </div>
               <span className="text-[#00E5D6] text-lg font-bold" style={{
               fontFamily: 'Audiowide, sans-serif'
-            }}>
-                TRUSTED BY OVER 200+
-              </span>
+            }}>5-Star Average Google Review</span>
             </div>
             
             <div className="flex justify-center items-center space-x-6 mb-4">
@@ -100,9 +98,7 @@ const Index = () => {
             
             <p className="text-[#D3D4FF] text-lg font-semibold" style={{
             fontFamily: 'Audiowide, sans-serif'
-          }}>
-              GHL AGENCY/SAAS OWNERS
-            </p>
+          }}>Trusted By Over 45 Businesses Just Like Yours</p>
           </div>
           
           {/* Video Component Placeholder */}
