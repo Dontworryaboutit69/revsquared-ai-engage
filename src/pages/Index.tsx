@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp } from 'lucide-react';
+import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp, Star } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -66,6 +67,45 @@ const Index = () => {
             Stop losing leads to missed calls and slow responses. Our custom AI agents qualify prospects, 
             book appointments, and integrate seamlessly with your CRM — 24/7/365.
           </p>
+          
+          {/* Social Proof Section */}
+          <div className="mb-12 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="flex space-x-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-[#FEDD4D] text-[#FEDD4D]" />
+                ))}
+              </div>
+              <span className="text-[#00E5D6] text-lg font-bold" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+                TRUSTED BY OVER 200+
+              </span>
+            </div>
+            
+            <div className="flex justify-center items-center space-x-6 mb-4">
+              {/* Customer Avatars */}
+              <div className="flex -space-x-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6233EA] to-[#E536C1] border-2 border-[#00E5D6] flex items-center justify-center text-[#F5F5F5] font-bold">
+                  JM
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00E5D6] to-[#6233EA] border-2 border-[#E536C1] flex items-center justify-center text-[#0D0D0D] font-bold">
+                  SA
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#E536C1] to-[#FEDD4D] border-2 border-[#00E5D6] flex items-center justify-center text-[#0D0D0D] font-bold">
+                  DL
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FEDD4D] to-[#6233EA] border-2 border-[#E536C1] flex items-center justify-center text-[#0D0D0D] font-bold">
+                  MR
+                </div>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#20215A] to-[#00E5D6] border-2 border-[#FEDD4D] flex items-center justify-center text-[#F5F5F5] font-bold">
+                  KT
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-[#D3D4FF] text-lg font-semibold" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+              GHL AGENCY/SAAS OWNERS
+            </p>
+          </div>
           
           {/* Video Component Placeholder */}
           <div className="mb-12 max-w-4xl mx-auto">
