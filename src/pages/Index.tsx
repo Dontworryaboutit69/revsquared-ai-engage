@@ -1,15 +1,23 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp, Star } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
+
 const Index = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [formStep, setFormStep] = useState(0);
   const [formData, setFormData] = useState({
     businessType: '',
@@ -20,6 +28,7 @@ const Index = () => {
     phone: '',
     companyName: ''
   });
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formStep < 3) {
@@ -31,13 +40,29 @@ const Index = () => {
       });
     }
   };
+
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-  return <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
+
+  const integrationLogos = [
+    { name: 'Zapier', logo: '⚡' },
+    { name: 'Make', logo: '🔧' },
+    { name: 'n8n', logo: '🔗' },
+    { name: 'GoHighLevel', logo: 'GHL' },
+    { name: 'Roofr', logo: '🏠' },
+    { name: 'Aqulinx', logo: '💧' },
+    { name: 'Podium', logo: '🏆' },
+    { name: 'HubSpot', logo: '🎯' },
+    { name: 'Salesforce', logo: '☁️' },
+    { name: 'Pipedrive', logo: '📊' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#6233EA]/20 via-[#20215A]/30 to-[#0D0D0D]" />
@@ -48,18 +73,18 @@ const Index = () => {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }}>
+            fontFamily: 'Audiowide, sans-serif'
+          }}>
             RevSquared AI
           </h1>
           
           <h2 className="text-2xl md:text-4xl mb-8 text-[#D3D4FF]" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You....</h2>
+            fontFamily: 'Audiowide, sans-serif'
+          }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You....</h2>
           
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" style={{
-          fontFamily: 'Manrope, sans-serif'
-        }}>
+            fontFamily: 'Manrope, sans-serif'
+          }}>
             Stop losing leads to missed calls and slow responses. Our custom AI agents qualify prospects, 
             book appointments, and integrate seamlessly with your CRM — 24/7/365.
           </p>
@@ -68,11 +93,13 @@ const Index = () => {
           <div className="mb-12 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <div className="flex space-x-2">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-[#FEDD4D] text-[#FEDD4D]" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-[#FEDD4D] text-[#FEDD4D]" />
+                ))}
               </div>
               <span className="text-[#00E5D6] text-lg font-bold" style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}>5-Star Average Google Review</span>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>5-Star Average Google Review</span>
             </div>
             
             <div className="flex justify-center items-center space-x-6 mb-4">
@@ -97,8 +124,8 @@ const Index = () => {
             </div>
             
             <p className="text-[#D3D4FF] text-lg font-semibold" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>Trusted By Over 45 Businesses Just Like Yours</p>
+              fontFamily: 'Audiowide, sans-serif'
+            }}>Trusted By Over 45 Businesses Just Like Yours</p>
           </div>
           
           {/* Video Component Placeholder */}
@@ -109,19 +136,24 @@ const Index = () => {
                   <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-[#F5F5F5] ml-1" />
                 </div>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+                  fontFamily: 'Manrope, sans-serif'
+                }}>
                   Watch How AI Transforms Your Business
                 </p>
               </div>
             </div>
           </div>
           
-          <Button size="lg" className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }} onClick={() => document.getElementById('qualification-form')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
+          <Button 
+            size="lg" 
+            className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105" 
+            style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }} 
+            onClick={() => document.getElementById('qualification-form')?.scrollIntoView({
+              behavior: 'smooth'
+            })}
+          >
             Get Your Custom AI Solution
           </Button>
         </div>
@@ -136,8 +168,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#20215A]/30 to-[#6233EA]/20" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#E536C1]" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }}>
+            fontFamily: 'Audiowide, sans-serif'
+          }}>
             The Lead Generation Problem
           </h2>
           
@@ -146,15 +178,15 @@ const Index = () => {
               <CardHeader>
                 <Phone className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>
+                  fontFamily: 'Audiowide, sans-serif'
+                }}>
                   Missed Calls = Lost Revenue
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+                  fontFamily: 'Manrope, sans-serif'
+                }}>
                   Studies show 85% of leads go to competitors when you don't answer within 5 minutes.
                 </p>
               </CardContent>
@@ -164,15 +196,15 @@ const Index = () => {
               <CardHeader>
                 <Microchip className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>
+                  fontFamily: 'Audiowide, sans-serif'
+                }}>
                   Manual Follow-ups Fail
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+                  fontFamily: 'Manrope, sans-serif'
+                }}>
                   Your team can't scale personal outreach. Leads slip through the cracks daily.
                 </p>
               </CardContent>
@@ -182,15 +214,15 @@ const Index = () => {
               <CardHeader>
                 <Lightbulb className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>
+                  fontFamily: 'Audiowide, sans-serif'
+                }}>
                   Inconsistent Qualification
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+                  fontFamily: 'Manrope, sans-serif'
+                }}>
                   Different team members qualify leads differently, creating chaos in your pipeline.
                 </p>
               </CardContent>
@@ -204,21 +236,21 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-l from-[#6233EA]/20 to-[#20215A]/30" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#00E5D6]" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }}>
+            fontFamily: 'Audiowide, sans-serif'
+          }}>
             The AI Solution
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <h3 className="text-3xl font-bold mb-6 text-[#E536C1]" style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                 24/7 AI Agents That Never Sleep
               </h3>
               <ul className="space-y-4 text-lg" style={{
-              fontFamily: 'Manrope, sans-serif'
-            }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
                   Answer every call within 2 rings, every time
@@ -245,13 +277,13 @@ const Index = () => {
             <div className="bg-gradient-to-br from-[#6233EA]/30 to-[#20215A]/50 p-8 rounded-2xl border border-[#00E5D6]/30">
               <Grid2x2 className="w-20 h-20 text-[#FEDD4D] mx-auto mb-6" />
               <h4 className="text-2xl font-bold mb-4 text-[#00E5D6]" style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                 Custom Built For Your Business
               </h4>
               <p className="text-[#D3D4FF] text-lg" style={{
-              fontFamily: 'Manrope, sans-serif'
-            }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                 Every AI agent is tailored to your industry, products, and sales process. 
                 Not a one-size-fits-all solution.
               </p>
@@ -260,29 +292,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CRM Integration Section */}
+      {/* CRM Integration Carousel Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-[#20215A]/50 to-[#6233EA]/30">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }} className="text-4xl font-bold mb-12 text-[#00E5D6] md:text-4xl">Seamless Integration With Your Tech Stack.</h2>
+          <h2 
+            style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }} 
+            className="text-4xl font-bold mb-12 text-[#00E5D6] md:text-4xl"
+          >
+            Seamless Integration With Your Tech Stack
+          </h2>
           <p className="text-xl mb-12 text-[#D3D4FF]" style={{
-          fontFamily: 'Manrope, sans-serif'
-        }}>
+            fontFamily: 'Manrope, sans-serif'
+          }}>
             We connect with the tools you already use
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-            {['GHL', 'Roofr', 'Aqulinx', 'Podium', 'More'].map((crm, index) => <div key={index} className="bg-[#F5F5F5]/10 p-6 rounded-xl border border-[#E536C1]/30 backdrop-blur-sm">
-                <div className="text-[#00E5D6] text-xl font-bold" style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}>
-                  {crm}
-                </div>
-              </div>)}
+          <div className="relative max-w-4xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {integrationLogos.map((integration, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="p-1">
+                      <Card className="bg-[#F5F5F5]/10 border-[#E536C1]/30 backdrop-blur-sm hover:bg-[#F5F5F5]/20 transition-all duration-300 hover:scale-105">
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                          <div className="text-center">
+                            <div className="text-4xl mb-2">{integration.logo}</div>
+                            <div className="text-[#00E5D6] text-sm font-bold" style={{
+                              fontFamily: 'Audiowide, sans-serif'
+                            }}>
+                              {integration.name}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="border-[#00E5D6]/30 text-[#00E5D6] hover:bg-[#00E5D6]/20" />
+              <CarouselNext className="border-[#00E5D6]/30 text-[#00E5D6] hover:bg-[#00E5D6]/20" />
+            </Carousel>
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <PremiumTestimonials />
 
       {/* Qualification Form */}
       <section id="qualification-form" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
@@ -404,6 +467,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
