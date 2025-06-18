@@ -202,7 +202,7 @@ export function AIShowcase() {
                       
                       {/* Play Button */}
                       <Button
-                        onClick={() => handlePlayPause(item.i
+                        onClick={() => handlePlayPause(item.id, item.audioUrl)}
                         size="sm"
                         className={`rounded-full w-10 h-10 p-0 transition-all duration-300 ${
                           isPlaying 
