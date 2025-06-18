@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,6 +14,7 @@ import {
 import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp, Star } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
+import { AIShowcase } from "@/components/ui/ai-showcase";
 
 const Index = () => {
   const { toast } = useToast();
@@ -291,6 +291,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* AI Showcase Section */}
+      <AIShowcase />
 
       {/* CRM Integration Carousel Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-[#20215A]/50 to-[#6233EA]/30">
