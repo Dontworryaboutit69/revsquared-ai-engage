@@ -1,3 +1,4 @@
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
@@ -22,13 +23,13 @@ const testimonials = [
     results: ["Smarter than employees", "True scaling engine", "Step-by-step support"]
   },
   {
-    name: "Sarah Chen",
-    role: "Operations Director, Home Services Pro",
-    company: "Home Services Pro",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+    name: "Kurt Strittmatter",
+    role: "Business Owner",
+    company: "Marketing & Lead Generation",
+    avatar: "/lovable-uploads/51251cd2-7b11-4a0a-b7ff-c2a25868513a.png",
     rating: 5,
-    text: "Our AI agents handle 200+ calls daily without missing a beat. Customer satisfaction is up 35% and we never lose another lead to missed calls. It's like having a perfect receptionist 24/7.",
-    results: ["200+ daily calls", "35% satisfaction boost", "Zero missed leads"]
+    text: "Kyle and Ahmad went above and beyond to create our marketing platform. The best part is they don't just build it and leave - they stay on top of the platform daily and work with you very quickly on every step. Highly recommend for lead generation!",
+    results: ["Above & beyond service", "Daily optimization", "Lightning fast support"]
   }
 ];
 
