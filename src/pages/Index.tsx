@@ -176,9 +176,7 @@ const Index = () => {
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
                 fontFamily: 'Manrope, sans-serif'
-              }}>
-                  Your team can't scale personal outreach. Leads slip through the cracks daily.
-                </p>
+              }}>Your team goes home. Leads keep coming. By Monday, that hot prospect from Friday has already signed with someone else. You can't hire enough people to cover every hour, and you shouldn't have to.</p>
               </CardContent>
             </Card>
             
