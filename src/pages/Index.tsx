@@ -71,7 +71,7 @@ const Index = () => {
           
           <h2 className="text-2xl md:text-4xl mb-8 text-[#D3D4FF]" style={{
             fontFamily: 'Audiowide, sans-serif'
-          }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You....</h2>
+          }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You Sleep</h2>
           
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" style={{
             fontFamily: 'Manrope, sans-serif'
