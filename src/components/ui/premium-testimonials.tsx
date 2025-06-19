@@ -1,9 +1,17 @@
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 
 const testimonials = [
+  {
+    name: "Chris Elliott",
+    role: "Owner, Radiant Security",
+    company: "Radiant Security",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    rating: 5,
+    text: "RevSquared's AI agents completely revolutionized how we handle sales and tech support. Our response time improved dramatically, sales conversion rates increased, and we now have 24/7 support available. Game-changing technology.",
+    results: ["Faster response times", "Higher conversions", "24/7 availability"]
+  },
   {
     name: "John Martinez",
     role: "CEO, Solar Solutions Inc",
