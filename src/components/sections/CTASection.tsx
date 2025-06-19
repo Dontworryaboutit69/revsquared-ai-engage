@@ -37,9 +37,7 @@ export function CTASection({
               </h3>
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>
-                Book a personalized 30-minute demo where we'll show you exactly how AI agents can transform your business and answer all your questions.
-              </p>
+            }}>Book a no-pressure 15-minute demo where we'll show you exactly how AI agents work for businesses like yours. No sales pitch - just proof.</p>
               <Button size="lg" className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 sm:py-4 text-sm sm:text-base" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onBookDemo}>
