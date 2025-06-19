@@ -10,7 +10,6 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
-import { Navigation } from "@/components/ui/navigation";
 
 const Index = () => {
   const { toast } = useToast();
@@ -26,7 +25,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
-      <Navigation />
       <div id="hero-section">
         <HeroSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
       </div>
