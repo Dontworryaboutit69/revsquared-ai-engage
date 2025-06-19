@@ -13,13 +13,13 @@ const testimonials = [
     results: ["Faster response times", "Higher conversions", "24/7 availability"]
   },
   {
-    name: "John Martinez",
-    role: "CEO, Solar Solutions Inc",
-    company: "Solar Solutions",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    name: "Hershel Krupp",
+    role: "Business Owner",
+    company: "Construction Company",
+    avatar: "/lovable-uploads/a5dc9957-a55a-4287-8f29-7f49a8146b42.png",
     rating: 5,
-    text: "RevSquared AI transformed our lead qualification process. We're closing 40% more deals and our team loves not having to chase cold leads anymore. The voice agents sound incredibly natural.",
-    results: ["40% more closes", "Better lead quality", "Natural conversations"]
+    text: "Working with RevSquared was a game-changer for our business. The AI system they created is smarter and more efficient than any employee we've ever had—it became a true engine for scaling our business. They were with us every step of the way.",
+    results: ["Smarter than employees", "True scaling engine", "Step-by-step support"]
   },
   {
     name: "Sarah Chen",
@@ -29,33 +29,6 @@ const testimonials = [
     rating: 5,
     text: "Our AI agents handle 200+ calls daily without missing a beat. Customer satisfaction is up 35% and we never lose another lead to missed calls. It's like having a perfect receptionist 24/7.",
     results: ["200+ daily calls", "35% satisfaction boost", "Zero missed leads"]
-  },
-  {
-    name: "Mike Rodriguez",
-    role: "Founder, Roofing Experts",
-    company: "Roofing Experts",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "The SMS follow-up system is incredible. Our appointment show-rate increased from 60% to 85%. The AI knows exactly what to say and when to say it. Best ROI we've ever seen.",
-    results: ["85% show rate", "Automated follow-ups", "Best ROI ever"]
-  },
-  {
-    name: "Lisa Thompson",
-    role: "VP Sales, Business Capital",
-    company: "Business Capital",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "RevSquared's outbound agents book 3x more appointments than our human team ever did. The consistency is amazing - every prospect gets the same high-quality experience.",
-    results: ["3x more appointments", "Perfect consistency", "Higher conversion"]
-  },
-  {
-    name: "David Kim",
-    role: "Owner, Security Solutions",
-    company: "Security Solutions",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "Technical support calls used to drain our resources. Now our AI handles 80% of support tickets perfectly, and our customers are happier than ever. Game-changing technology.",
-    results: ["80% automated support", "Happier customers", "Resource savings"]
   }
 ];
 
@@ -68,7 +41,7 @@ export function PremiumTestimonials() {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 8000); // Slowed down from 6000ms to 8000ms
 
     return () => clearInterval(timer);
   }, []);
