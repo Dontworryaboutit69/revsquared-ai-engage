@@ -12,6 +12,7 @@ import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
 import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
+
 const Index = () => {
   const {
     toast
@@ -221,23 +222,23 @@ const Index = () => {
             }}>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
-                  Answer every call within 2 rings, every time
+                  Answer every call within 2 rings - even at 3 AM on Christmas
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
-                  Qualify leads with perfect consistency using your criteria
+                  Qualify leads with perfect consistency using YOUR exact criteria
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
-                  Book appointments directly into your calendar
+                  Book appointments directly into your calendar (no double-bookings)
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
-                  Send SMS follow-ups automatically
+                  Send SMS follow-ups automatically within 60 seconds
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
-                  Integrate seamlessly with your existing CRM
+                  Integrate seamlessly with your existing CRM (zero headaches)
                 </li>
               </ul>
             </div>
@@ -370,4 +371,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
