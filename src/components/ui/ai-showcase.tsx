@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
@@ -37,7 +36,7 @@ const showcaseItems: ShowcaseItem[] = [
   {
     id: 'lending-outbound',
     title: 'Outbound Call Agent',
-    description: 'Proactive AI agent that reaches out to potential business lending clients, warming leads and booking consultations.',
+    description: 'Listen to this AI warm up cold leads and book consultations without sounding robotic. Even handles "I\'m not interested" objections like a seasoned sales pro.',
     industry: 'Business Lending Firm',
     type: 'outbound',
     audioUrl: '/audio/lending-outbound-demo.mp3',
