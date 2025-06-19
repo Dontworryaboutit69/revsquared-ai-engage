@@ -10,6 +10,7 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
+import { Navigation } from "@/components/ui/navigation";
 
 const Index = () => {
   const { toast } = useToast();
@@ -25,12 +26,23 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
-      <HeroSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
-      <ProblemSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
-      <SolutionSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
-      <AIShowcase />
+      <Navigation />
+      <div id="hero-section">
+        <HeroSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
+      </div>
+      <div id="problem-section">
+        <ProblemSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
+      </div>
+      <div id="solution-section">
+        <SolutionSection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
+      </div>
+      <div id="ai-showcase-section">
+        <AIShowcase />
+      </div>
       <IntegrationHub />
-      <PremiumTestimonials />
+      <div id="testimonials-section">
+        <PremiumTestimonials />
+      </div>
       <CTASection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
       <TryAIForm open={showTryAIForm} onOpenChange={setShowTryAIForm} />
       <Footer />
