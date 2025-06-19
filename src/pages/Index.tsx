@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -338,38 +337,6 @@ const Index = () => {
 
       {/* AI Showcase Section */}
       <AIShowcase />
-
-      {/* CTA After AI Showcase */}
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#FEDD4D]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
-            Want to hear your industry?
-          </h3>
-          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Don't just take our word for it - see how our AI agents can transform your business.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button
-              size="lg"
-              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Free Demo
-            </Button>
-            <Button
-              size="lg"
-              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => setShowTryAIForm(true)}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Get AI Demo Call
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* CRM Integration Hub Section - Replaced */}
       <IntegrationHub />
