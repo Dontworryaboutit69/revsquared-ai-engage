@@ -4,13 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Phone, Microchip, Lightbulb, Grid2x2, ArrowDown, ArrowUp, Star, Calendar, ExternalLink } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
@@ -18,9 +12,10 @@ import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
 import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
-
 const Index = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formStep, setFormStep] = useState(0);
   const [formData, setFormData] = useState({
     businessType: '',
@@ -32,7 +27,6 @@ const Index = () => {
     companyName: ''
   });
   const [showTryAIForm, setShowTryAIForm] = useState(false);
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formStep < 3) {
@@ -44,16 +38,13 @@ const Index = () => {
       });
     }
   };
-
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
-  return (
-    <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
+  return <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#6233EA]/20 via-[#20215A]/30 to-[#0D0D0D]" />
@@ -64,33 +55,28 @@ const Index = () => {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>
+          fontFamily: 'Audiowide, sans-serif'
+        }}>
             RevSquared AI
           </h1>
           
           <h2 className="text-2xl md:text-4xl mb-8 text-[#D3D4FF]" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You Sleep</h2>
+          fontFamily: 'Audiowide, sans-serif'
+        }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You Sleep</h2>
           
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" style={{
-            fontFamily: 'Manrope, sans-serif'
-          }}>
-            Stop losing leads to missed calls and slow responses. Our custom AI agents qualify prospects, 
-            book appointments, and integrate seamlessly with your CRM — 24/7/365.
-          </p>
+          fontFamily: 'Manrope, sans-serif'
+        }}>Picture this: It's Saturday morning. You check your phone and see 3 new appointments booked, 2 quotes requested, and 5 leads qualified - all while you were offline. Our custom AI agents qualify prospects, book appointments, and integrate seamlessly with your CRM — 24/7/365.</p>
           
           {/* Social Proof Section */}
           <div className="mb-12 max-w-4xl mx-auto">
             <div className="flex items-center justify-center space-x-4 mb-6">
               <div className="flex space-x-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-[#FEDD4D] text-[#FEDD4D]" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-[#FEDD4D] text-[#FEDD4D]" />)}
               </div>
               <span className="text-[#00E5D6] text-lg font-bold" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>5-Star Average Google Review</span>
+              fontFamily: 'Audiowide, sans-serif'
+            }}>5-Star Average Google Review</span>
             </div>
             
             <div className="flex justify-center items-center space-x-6 mb-4">
@@ -115,8 +101,8 @@ const Index = () => {
             </div>
             
             <p className="text-[#D3D4FF] text-lg font-semibold" style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}>Trusted By Over 45 Businesses Just Like Yours</p>
+            fontFamily: 'Audiowide, sans-serif'
+          }}>Trusted By Over 45 Businesses Just Like Yours</p>
           </div>
           
           {/* Video Component Placeholder */}
@@ -127,24 +113,19 @@ const Index = () => {
                   <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-[#F5F5F5] ml-1" />
                 </div>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Watch How AI Transforms Your Business
                 </p>
               </div>
             </div>
           </div>
           
-          <Button 
-            size="lg" 
-            className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105" 
-            style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }} 
-            onClick={() => document.getElementById('cta-section')?.scrollIntoView({
-              behavior: 'smooth'
-            })}
-          >
+          <Button size="lg" className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105" style={{
+          fontFamily: 'Audiowide, sans-serif'
+        }} onClick={() => document.getElementById('cta-section')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             Get Your Custom AI Solution
           </Button>
         </div>
@@ -159,8 +140,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#20215A]/30 to-[#6233EA]/20" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#E536C1]" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>
+          fontFamily: 'Audiowide, sans-serif'
+        }}>
             The Lead Generation Problem
           </h2>
           
@@ -169,15 +150,15 @@ const Index = () => {
               <CardHeader>
                 <Phone className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                  fontFamily: 'Audiowide, sans-serif'
-                }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                   Missed Calls = Lost Revenue
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Your phone rings at 11 PM. It's a $10K lead. You miss it. Your competitor answers theirs. You lose $120K this year from missed calls alone.
                 </p>
               </CardContent>
@@ -187,15 +168,15 @@ const Index = () => {
               <CardHeader>
                 <Microchip className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                  fontFamily: 'Audiowide, sans-serif'
-                }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                   Manual Follow-ups Fail
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Your team can't scale personal outreach. Leads slip through the cracks daily.
                 </p>
               </CardContent>
@@ -205,15 +186,15 @@ const Index = () => {
               <CardHeader>
                 <Lightbulb className="w-16 h-16 text-[#FEDD4D] mx-auto mb-4" />
                 <CardTitle className="text-[#00E5D6] text-2xl" style={{
-                  fontFamily: 'Audiowide, sans-serif'
-                }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                   Inconsistent Qualification
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Different team members qualify leads differently, creating chaos in your pipeline.
                 </p>
               </CardContent>
@@ -227,21 +208,21 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-l from-[#6233EA]/20 to-[#20215A]/30" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-12 text-[#00E5D6]" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>
+          fontFamily: 'Audiowide, sans-serif'
+        }}>
             The AI Solution
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <h3 className="text-3xl font-bold mb-6 text-[#E536C1]" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>
+              fontFamily: 'Audiowide, sans-serif'
+            }}>
                 24/7 AI Agents That Never Sleep
               </h3>
               <ul className="space-y-4 text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+              fontFamily: 'Manrope, sans-serif'
+            }}>
                 <li className="flex items-start">
                   <span className="text-[#00E5D6] mr-3">✓</span>
                   Answer every call within 2 rings, every time
@@ -268,13 +249,13 @@ const Index = () => {
             <div className="bg-gradient-to-br from-[#6233EA]/30 to-[#20215A]/50 p-8 rounded-2xl border border-[#00E5D6]/30">
               <Grid2x2 className="w-20 h-20 text-[#FEDD4D] mx-auto mb-6" />
               <h4 className="text-2xl font-bold mb-4 text-[#00E5D6]" style={{
-                fontFamily: 'Audiowide, sans-serif'
-              }}>
+              fontFamily: 'Audiowide, sans-serif'
+            }}>
                 Custom Built For Your Business
               </h4>
               <p className="text-[#D3D4FF] text-lg" style={{
-                fontFamily: 'Manrope, sans-serif'
-              }}>
+              fontFamily: 'Manrope, sans-serif'
+            }}>
                 Every AI agent is tailored to your industry, products, and sales process. 
                 Not a one-size-fits-all solution.
               </p>
@@ -296,13 +277,13 @@ const Index = () => {
       <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#E536C1]" style={{
-            fontFamily: 'Audiowide, sans-serif'
-          }}>
+          fontFamily: 'Audiowide, sans-serif'
+        }}>
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-[#D3D4FF] mb-12 max-w-3xl mx-auto" style={{
-            fontFamily: 'Manrope, sans-serif'
-          }}>
+          fontFamily: 'Manrope, sans-serif'
+        }}>
             Choose how you'd like to experience our AI agents - get a personalized demo or try it yourself right now.
           </p>
 
@@ -314,23 +295,18 @@ const Index = () => {
                   <Calendar className="w-8 h-8 text-[#0D0D0D]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#00E5D6] mb-4" style={{
-                  fontFamily: 'Audiowide, sans-serif'
-                }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                   Schedule a Demo
                 </h3>
                 <p className="text-[#D3D4FF] mb-6 leading-relaxed" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Book a personalized 30-minute demo where we'll show you exactly how AI agents can transform your business and answer all your questions.
                 </p>
-                <Button
-                  size="lg"
-                  className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-4"
-                  style={{
-                    fontFamily: 'Audiowide, sans-serif'
-                  }}
-                  onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
-                >
+                <Button size="lg" className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-4" style={{
+                fontFamily: 'Audiowide, sans-serif'
+              }} onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}>
                   Book Demo Call
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
@@ -344,23 +320,18 @@ const Index = () => {
                   <Phone className="w-8 h-8 text-[#0D0D0D]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#E536C1] mb-4" style={{
-                  fontFamily: 'Audiowide, sans-serif'
-                }}>
+                fontFamily: 'Audiowide, sans-serif'
+              }}>
                   Try AI Agent Now
                 </h3>
                 <p className="text-[#D3D4FF] mb-6 leading-relaxed" style={{
-                  fontFamily: 'Manrope, sans-serif'
-                }}>
+                fontFamily: 'Manrope, sans-serif'
+              }}>
                   Experience our AI firsthand! Our agent will call you within 5 minutes to demonstrate its capabilities and answer your questions.
                 </p>
-                <Button
-                  size="lg"
-                  className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-4"
-                  style={{
-                    fontFamily: 'Audiowide, sans-serif'
-                  }}
-                  onClick={() => setShowTryAIForm(true)}
-                >
+                <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-4" style={{
+                fontFamily: 'Audiowide, sans-serif'
+              }} onClick={() => setShowTryAIForm(true)}>
                   Get AI Demo Call
                   <Phone className="w-4 h-4 ml-2" />
                 </Button>
@@ -370,8 +341,8 @@ const Index = () => {
 
           <div className="mt-12 text-center">
             <p className="text-[#D3D4FF]/80 text-sm" style={{
-              fontFamily: 'Manrope, sans-serif'
-            }}>
+            fontFamily: 'Manrope, sans-serif'
+          }}>
               🔒 Your information is secure and will never be shared
             </p>
           </div>
@@ -379,10 +350,7 @@ const Index = () => {
       </section>
 
       {/* Try AI Form Dialog */}
-      <TryAIForm 
-        open={showTryAIForm} 
-        onOpenChange={setShowTryAIForm} 
-      />
+      <TryAIForm open={showTryAIForm} onOpenChange={setShowTryAIForm} />
 
       {/* Footer */}
       <footer className="py-12 px-4 bg-[#20215A]/50 border-t border-[#00E5D6]/30">
@@ -404,8 +372,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
