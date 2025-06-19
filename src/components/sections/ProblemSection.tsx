@@ -71,33 +71,6 @@ export function ProblemSection({ onBookDemo, onTryAI }: ProblemSectionProps) {
             </CardContent>
           </Card>
         </div>
-
-        {/* CTA After Problem Section */}
-        <div className="text-center">
-          <p className="text-xl text-[#D3D4FF] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Sound familiar? Let's fix this together.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button
-              size="lg"
-              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={onBookDemo}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Free Demo - 15 Minutes, No Pressure
-            </Button>
-            <Button
-              size="lg"
-              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={onTryAI}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Get AI Demo Call - Live Proof in 5 Minutes
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );
