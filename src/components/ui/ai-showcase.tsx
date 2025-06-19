@@ -1,6 +1,7 @@
+
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon, ArrowRight } from 'lucide-react';
+import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -219,15 +220,14 @@ export function AIShowcase() {
                         
                         {!isPlaying && (
                           <motion.div
-                            className="flex items-center gap-1 text-[#FEDD4D] text-xs font-semibold"
+                            className="text-[#FEDD4D] text-xs font-semibold"
                             animate={{ scale: [1, 1.05, 1] }}
                             transition={{ duration: 2, repeat: Infinity }}
                             style={{
                               fontFamily: 'Audiowide, sans-serif'
                             }}
                           >
-                            <span>Click to Play</span>
-                            <ArrowRight className="w-3 h-3" />
+                            Click to Play
                           </motion.div>
                         )}
                       </div>
