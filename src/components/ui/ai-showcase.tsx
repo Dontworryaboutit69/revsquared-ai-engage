@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
@@ -192,8 +191,8 @@ export function AIShowcase() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-[#20215A]/30 border-[#00E5D6]/30 backdrop-blur-sm hover:border-[#00E5D6]/50 transition-all duration-300 overflow-hidden group">
-                  <CardContent className="p-6">
+                <Card className="bg-[#20215A]/30 border-[#00E5D6]/30 backdrop-blur-sm hover:border-[#00E5D6]/50 transition-all duration-300 overflow-hidden group h-full flex flex-col">
+                  <CardContent className="p-6 flex flex-col h-full">
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div className={`p-3 rounded-lg bg-gradient-to-r ${typeColors[item.type]} bg-opacity-20`}>
@@ -231,7 +230,7 @@ export function AIShowcase() {
                       {item.industry}
                     </p>
                     
-                    <p className="text-[#D3D4FF] text-sm mb-4 leading-relaxed" style={{
+                    <p className="text-[#D3D4FF] text-sm mb-4 leading-relaxed flex-grow" style={{
                       fontFamily: 'Manrope, sans-serif'
                     }}>
                       {item.description}
@@ -244,11 +243,11 @@ export function AIShowcase() {
                       }}>
                         Key Features:
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         {item.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-[#6233EA]/20 text-[#D3D4FF] text-xs rounded-md border border-[#6233EA]/30"
+                            className="px-2 py-1 bg-[#6233EA]/20 text-[#D3D4FF] text-xs rounded-md border border-[#6233EA]/30 text-center"
                             style={{
                               fontFamily: 'Manrope, sans-serif'
                             }}
@@ -260,7 +259,7 @@ export function AIShowcase() {
                     </div>
 
                     {/* Results */}
-                    <div className="space-y-2">
+                    <div className="space-y-2 mt-auto">
                       {item.resultStats.map((stat, idx) => (
                         <div key={idx} className="flex justify-between items-center">
                           <span className="text-[#D3D4FF] text-xs" style={{
