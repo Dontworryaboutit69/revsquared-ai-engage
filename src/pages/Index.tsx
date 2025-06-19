@@ -178,7 +178,7 @@ const Index = () => {
                 <p className="text-[#D3D4FF] text-lg" style={{
                   fontFamily: 'Manrope, sans-serif'
                 }}>
-                  Studies show 85% of leads go to competitors when you don't answer within 5 minutes.
+                  Your phone rings at 11 PM. It's a $10K lead. You miss it. Your competitor answers theirs. You lose $120K this year from missed calls alone.
                 </p>
               </CardContent>
             </Card>
