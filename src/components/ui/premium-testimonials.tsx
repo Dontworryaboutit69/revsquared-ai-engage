@@ -1,3 +1,4 @@
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
@@ -38,6 +39,15 @@ const testimonials = [
     rating: 5,
     text: "I was crazy stressed with a small team and phones ringing off the hook. I tried other AI solutions but they couldn't handle what I needed. RevSquared built exactly what my roofing business required - now I can actually focus on running my company instead of drowning in calls.",
     results: ["Handles high call volume", "Built for roofing industry", "Stress-free operations"]
+  },
+  {
+    name: "James Lowery",
+    role: "Mortgage Banker",
+    company: "HomeFirst",
+    avatar: "/lovable-uploads/fe17db4b-9468-43c2-99fc-acb7748e01c9.png",
+    rating: 5,
+    text: "RevSquared built a conversational AI that completely redefined how I connect with prospects. The AI engages leads in real-time with personalization that feels natural and human. It doesn't just collect data—it actively nurtures and qualifies leads, saving me time so I can focus on closing deals.",
+    results: ["Natural AI conversations", "Active lead nurturing", "More time for closing"]
   }
 ];
 
