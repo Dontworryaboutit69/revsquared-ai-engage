@@ -1,4 +1,3 @@
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Quote, Star, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
@@ -30,6 +29,15 @@ const testimonials = [
     rating: 5,
     text: "Kyle and Ahmad went above and beyond to create our marketing platform. The best part is they don't just build it and leave - they stay on top of the platform daily and work with you very quickly on every step. Highly recommend for lead generation!",
     results: ["Above & beyond service", "Daily optimization", "Lightning fast support"]
+  },
+  {
+    name: "Don Mackee",
+    role: "Owner",
+    company: "BANA Roofing & Solar",
+    avatar: "/lovable-uploads/7f426d81-8a3d-4258-97da-9273ee449fbf.png",
+    rating: 5,
+    text: "I was crazy stressed with a small team and phones ringing off the hook. I tried other AI solutions but they couldn't handle what I needed. RevSquared built exactly what my roofing business required - now I can actually focus on running my company instead of drowning in calls.",
+    results: ["Handles high call volume", "Built for roofing industry", "Stress-free operations"]
   }
 ];
 
