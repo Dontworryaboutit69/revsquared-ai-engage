@@ -7,7 +7,7 @@ const testimonials = [
     name: "Chris Elliott",
     role: "Owner, Radiant Security",
     company: "Radiant Security",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    avatar: "/lovable-uploads/758b4181-2dae-445d-b017-caa9eb8f065e.png",
     rating: 5,
     text: "RevSquared's AI agents completely revolutionized how we handle sales and tech support. Our response time improved dramatically, sales conversion rates increased, and we now have 24/7 support available. Game-changing technology.",
     results: ["Faster response times", "Higher conversions", "24/7 availability"]
