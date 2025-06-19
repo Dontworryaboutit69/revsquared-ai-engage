@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,9 +15,7 @@ import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
 
 const Index = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [formStep, setFormStep] = useState(0);
   const [formData, setFormData] = useState({
     businessType: '',
@@ -28,6 +27,7 @@ const Index = () => {
     companyName: ''
   });
   const [showTryAIForm, setShowTryAIForm] = useState(false);
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formStep < 3) {
@@ -39,6 +39,7 @@ const Index = () => {
       });
     }
   };
+
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -46,7 +47,8 @@ const Index = () => {
     }));
   };
 
-  return <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
+  return (
+    <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#6233EA]/20 via-[#20215A]/30 to-[#0D0D0D]" />
@@ -115,7 +117,7 @@ const Index = () => {
           </h3>
           
           {/* Video Component Placeholder */}
-          <div className="mb-12 max-w-4xl mx-auto">
+          <div className="mb-8 max-w-4xl mx-auto">
             <div className="aspect-video bg-gradient-to-br from-[#6233EA] to-[#20215A] rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-20 h-20 bg-[#E536C1] rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -129,8 +131,30 @@ const Index = () => {
               </div>
             </div>
           </div>
+
+          {/* CTA Buttons Under Video */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+            <Button
+              size="lg"
+              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-lg px-8 py-4 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+            >
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Demo Call
+            </Button>
+            <Button
+              size="lg"
+              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 text-lg px-8 py-4 rounded-full shadow-lg shadow-[#E536C1]/30 transition-all duration-300 hover:shadow-[#E536C1]/50 hover:scale-105"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => setShowTryAIForm(true)}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Get Live AI Demo
+            </Button>
+          </div>
           
-          <Button size="lg" className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-xl px-12 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105" style={{
+          <Button size="lg" className="bg-gradient-to-r from-[#00E5D6] to-[#6233EA] text-[#0D0D0D] hover:opacity-90 text-xl px-12 py-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105" style={{
           fontFamily: 'Audiowide, sans-serif'
         }} onClick={() => document.getElementById('cta-section')?.scrollIntoView({
           behavior: 'smooth'
@@ -205,6 +229,33 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+
+          {/* CTA After Problem Section */}
+          <div className="text-center">
+            <p className="text-xl text-[#D3D4FF] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Sound familiar? Let's fix this together.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              <Button
+                size="lg"
+                className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
+                style={{ fontFamily: 'Audiowide, sans-serif' }}
+                onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                Book Demo Call
+              </Button>
+              <Button
+                size="lg"
+                className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
+                style={{ fontFamily: 'Audiowide, sans-serif' }}
+                onClick={() => setShowTryAIForm(true)}
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Try AI Now
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -218,7 +269,7 @@ const Index = () => {
             The AI Solution
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="text-left">
               <h3 className="text-3xl font-bold mb-6 text-[#E536C1]" style={{
               fontFamily: 'Audiowide, sans-serif'
@@ -263,17 +314,108 @@ const Index = () => {
             }}>Every AI agent learns your industry lingo, knows your pricing, and follows your exact sales process. While competitors use generic chatbots, you get an AI that sounds like your best salesperson - but never calls in sick.</p>
             </div>
           </div>
+
+          {/* CTA After Solution Section */}
+          <div className="text-center">
+            <p className="text-xl text-[#D3D4FF] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Ready to see it in action?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              <Button
+                size="lg"
+                className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
+                style={{ fontFamily: 'Audiowide, sans-serif' }}
+                onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                Book Demo Call
+              </Button>
+              <Button
+                size="lg"
+                className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
+                style={{ fontFamily: 'Audiowide, sans-serif' }}
+                onClick={() => setShowTryAIForm(true)}
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Try AI Now
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* AI Showcase Section */}
       <AIShowcase />
 
+      {/* CTA After AI Showcase */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#FEDD4D]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            Experience the Difference Yourself
+          </h3>
+          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            Don't just take our word for it - see how our AI agents can transform your business.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <Button
+              size="lg"
+              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book Demo Call
+            </Button>
+            <Button
+              size="lg"
+              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => setShowTryAIForm(true)}
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Try AI Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CRM Integration Hub Section - Replaced */}
       <IntegrationHub />
 
       {/* Testimonials Section */}
       <PremiumTestimonials />
+
+      {/* CTA After Testimonials */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#00E5D6]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            Join These Success Stories
+          </h3>
+          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            Your business could be the next success story. Let's make it happen.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <Button
+              size="lg"
+              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book Demo Call
+            </Button>
+            <Button
+              size="lg"
+              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => setShowTryAIForm(true)}
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Try AI Now
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* New CTA Section */}
       <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
@@ -374,7 +516,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
 
 export default Index;
