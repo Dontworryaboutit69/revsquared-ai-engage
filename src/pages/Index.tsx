@@ -192,9 +192,7 @@ const Index = () => {
               <CardContent>
                 <p className="text-[#D3D4FF] text-lg" style={{
                 fontFamily: 'Manrope, sans-serif'
-              }}>
-                  Different team members qualify leads differently, creating chaos in your pipeline.
-                </p>
+              }}>Sarah asks different questions than Mike. Mike forgets to get the budget. Sarah books unqualified leads. Your pipeline becomes a guessing game instead of a predictable revenue machine.</p>
               </CardContent>
             </Card>
           </div>
