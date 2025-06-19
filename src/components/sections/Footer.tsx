@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -15,11 +16,22 @@ export function Footer() {
       }}>
           © 2025 RevSquared AI. Old school cool. New school smart.
         </p>
-        <p className="text-[#D3D4FF]/70 text-xs sm:text-sm px-4" style={{
+        <p className="text-[#D3D4FF]/70 text-xs sm:text-sm px-4 mb-4" style={{
         fontFamily: 'Manrope, sans-serif'
       }}>
           Transform your business with custom AI agents that work 24/7
         </p>
+        <div className="flex justify-center">
+          <Link 
+            to="/privacy-policy" 
+            className="text-[#00E5D6] hover:text-[#00E5D6]/80 text-xs sm:text-sm underline transition-colors"
+            style={{
+              fontFamily: 'Manrope, sans-serif'
+            }}
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
