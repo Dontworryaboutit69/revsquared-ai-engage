@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
+import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -199,22 +199,38 @@ export function AIShowcase() {
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       
-                      {/* Play Button */}
-                      <Button
-                        onClick={() => handlePlayPause(item.id, item.audioUrl)}
-                        size="sm"
-                        className={`rounded-full w-10 h-10 p-0 transition-all duration-300 ${
-                          isPlaying 
-                            ? 'bg-[#E536C1] hover:bg-[#E536C1]/90 scale-110' 
-                            : 'bg-[#00E5D6] hover:bg-[#00E5D6]/90 hover:scale-110'
-                        }`}
-                      >
-                        {isPlaying ? (
-                          <Pause className="w-4 h-4 text-[#0D0D0D]" />
-                        ) : (
-                          <Play className="w-4 h-4 text-[#0D0D0D] ml-0.5" />
+                      {/* Play Button with Click to Play Indicator */}
+                      <div className="flex flex-col items-center gap-2">
+                        <Button
+                          onClick={() => handlePlayPause(item.id, item.audioUrl)}
+                          size="sm"
+                          className={`rounded-full w-12 h-12 p-0 transition-all duration-300 ${
+                            isPlaying 
+                              ? 'bg-[#E536C1] hover:bg-[#E536C1]/90 scale-110' 
+                              : 'bg-[#00E5D6] hover:bg-[#00E5D6]/90 hover:scale-110'
+                          }`}
+                        >
+                          {isPlaying ? (
+                            <Pause className="w-5 h-5 text-[#0D0D0D]" />
+                          ) : (
+                            <Play className="w-5 h-5 text-[#0D0D0D] ml-0.5" />
+                          )}
+                        </Button>
+                        
+                        {!isPlaying && (
+                          <motion.div
+                            className="flex items-center gap-1 text-[#FEDD4D] text-xs font-semibold"
+                            animate={{ scale: [1, 1.05, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            style={{
+                              fontFamily: 'Audiowide, sans-serif'
+                            }}
+                          >
+                            <span>Click to Play</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </motion.div>
                         )}
-                      </Button>
+                      </div>
                     </div>
 
                     {/* Content */}
