@@ -341,72 +341,8 @@ const Index = () => {
       {/* CRM Integration Hub Section - Replaced */}
       <IntegrationHub />
 
-      {/* CTA After Integration Hub */}
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#00E5D6]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
-            Ready to integrate?
-          </h3>
-          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Connect your existing systems and see the magic happen.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button
-              size="lg"
-              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Free Demo
-            </Button>
-            <Button
-              size="lg"
-              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => setShowTryAIForm(true)}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Get AI Demo Call
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <PremiumTestimonials />
-
-      {/* CTA After Testimonials */}
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#00E5D6]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
-            Ready to get started?
-          </h3>
-          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Your business could be the next success story. Let's make it happen.
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Button
-              size="lg"
-              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
-            >
-              <Calendar className="w-4 h-4 mr-2" />
-              Book Free Demo
-            </Button>
-            <Button
-              size="lg"
-              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
-              style={{ fontFamily: 'Audiowide, sans-serif' }}
-              onClick={() => setShowTryAIForm(true)}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Get AI Demo Call
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* New CTA Section */}
       <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
