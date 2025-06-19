@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
@@ -311,28 +310,6 @@ export function AIShowcase() {
             );
           })}
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <Button
-            size="lg"
-            className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-lg px-8 py-6 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105"
-            style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }}
-            onClick={() => document.getElementById('qualification-form')?.scrollIntoView({
-              behavior: 'smooth'
-            })}
-          >
-            Get Your Custom AI Agent
-          </Button>
-        </motion.div>
       </div>
     </section>
   );
