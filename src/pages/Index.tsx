@@ -12,6 +12,7 @@ import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
 import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
+
 const Index = () => {
   const {
     toast
@@ -44,6 +45,7 @@ const Index = () => {
       [field]: value
     }));
   };
+
   return <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
@@ -325,7 +327,7 @@ const Index = () => {
                 <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-4" style={{
                 fontFamily: 'Audiowide, sans-serif'
               }} onClick={() => setShowTryAIForm(true)}>
-                  Get AI Demo Call
+                  Get Live AI Demo
                   <Phone className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
