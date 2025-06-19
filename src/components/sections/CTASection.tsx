@@ -1,0 +1,89 @@
+
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, Phone, ExternalLink } from 'lucide-react';
+
+interface CTASectionProps {
+  onBookDemo: () => void;
+  onTryAI: () => void;
+}
+
+export function CTASection({ onBookDemo, onTryAI }: CTASectionProps) {
+  return (
+    <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#E536C1]" style={{
+        fontFamily: 'Audiowide, sans-serif'
+      }}>
+          Ready to Transform Your Business?
+        </h2>
+        <p className="text-xl text-[#D3D4FF] mb-12 max-w-3xl mx-auto" style={{
+        fontFamily: 'Manrope, sans-serif'
+      }}>
+          Choose how you'd like to experience our AI agents - get a personalized demo or try it yourself right now.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Schedule Demo Card */}
+          <Card className="bg-[#20215A]/30 border-[#00E5D6]/30 backdrop-blur-sm hover:border-[#00E5D6]/50 transition-all duration-300 group">
+            <CardContent className="p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-[#00E5D6] to-[#6233EA] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Calendar className="w-8 h-8 text-[#0D0D0D]" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#00E5D6] mb-4" style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }}>
+                Schedule a Demo
+              </h3>
+              <p className="text-[#D3D4FF] mb-6 leading-relaxed" style={{
+              fontFamily: 'Manrope, sans-serif'
+            }}>
+                Book a personalized 30-minute demo where we'll show you exactly how AI agents can transform your business and answer all your questions.
+              </p>
+              <Button size="lg" className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-4" style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }} onClick={onBookDemo}>
+                Book Demo Call
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Try AI Card */}
+          <Card className="bg-[#20215A]/30 border-[#E536C1]/30 backdrop-blur-sm hover:border-[#E536C1]/50 transition-all duration-300 group">
+            <CardContent className="p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-[#E536C1] to-[#FEDD4D] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone className="w-8 h-8 text-[#0D0D0D]" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#E536C1] mb-4" style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }}>
+                Try AI Agent Now
+              </h3>
+              <p className="text-[#D3D4FF] mb-6 leading-relaxed" style={{
+              fontFamily: 'Manrope, sans-serif'
+            }}>
+                Experience our AI firsthand! Our agent will call you within 5 minutes to demonstrate its capabilities and answer your questions.
+              </p>
+              <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-4" style={{
+              fontFamily: 'Audiowide, sans-serif'
+            }} onClick={onTryAI}>
+                Get Live AI Demo
+                <Phone className="w-4 h-4 ml-2" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-[#D3D4FF]/80 text-sm" style={{
+          fontFamily: 'Manrope, sans-serif'
+        }}>
+            🔒 Your information is secure and will never be shared
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
