@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Phone, ExternalLink } from 'lucide-react';
-
 interface CTASectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
 }
-
-export function CTASection({ onBookDemo, onTryAI }: CTASectionProps) {
-  return (
-    <section id="cta-section" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
+export function CTASection({
+  onBookDemo,
+  onTryAI
+}: CTASectionProps) {
+  return <section id="cta-section" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-[#0D0D0D] via-[#20215A]/20 to-[#6233EA]/10">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#E536C1]" style={{
         fontFamily: 'Audiowide, sans-serif'
@@ -63,9 +62,7 @@ export function CTASection({ onBookDemo, onTryAI }: CTASectionProps) {
               </h3>
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>
-                Experience our AI firsthand! Our agent will call you within 5 minutes to demonstrate its capabilities and answer your questions.
-              </p>
+            }}>Want proof it actually works? Our AI will call you within 5 minutes to demonstrate its capabilities. Hear the difference yourself.</p>
               <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 sm:py-4 text-sm sm:text-base" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onTryAI}>
@@ -84,6 +81,5 @@ export function CTASection({ onBookDemo, onTryAI }: CTASectionProps) {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
