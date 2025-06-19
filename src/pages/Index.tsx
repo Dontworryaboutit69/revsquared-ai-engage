@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -150,17 +149,9 @@ const Index = () => {
               onClick={() => setShowTryAIForm(true)}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Get Live AI Demo
+              Try AI Now
             </Button>
           </div>
-          
-          <Button size="lg" className="bg-gradient-to-r from-[#00E5D6] to-[#6233EA] text-[#0D0D0D] hover:opacity-90 text-xl px-12 py-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }} onClick={() => document.getElementById('cta-section')?.scrollIntoView({
-          behavior: 'smooth'
-        })}>
-            Get Your Custom AI Solution
-          </Button>
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
