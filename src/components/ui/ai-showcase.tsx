@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
@@ -50,7 +51,7 @@ const showcaseItems: ShowcaseItem[] = [
   {
     id: 'security-support',
     title: 'Technical Support Agent',
-    description: 'AI-powered technical support for a home security company, helping customers with DIY installation and troubleshooting.',
+    description: 'Hear how this AI walks customers through complex installations step-by-step. Customers rate it higher than human support - and it never gets frustrated.',
     industry: 'Home Security Company',
     type: 'support',
     audioUrl: '/audio/security-support-demo.mp3',
