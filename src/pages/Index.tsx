@@ -12,7 +12,6 @@ import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
 import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
-
 const Index = () => {
   const {
     toast
@@ -252,10 +251,7 @@ const Index = () => {
               </h4>
               <p className="text-[#D3D4FF] text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>
-                Every AI agent is tailored to your industry, products, and sales process. 
-                Not a one-size-fits-all solution.
-              </p>
+            }}>Every AI agent learns your industry lingo, knows your pricing, and follows your exact sales process. While competitors use generic chatbots, you get an AI that sounds like your best salesperson - but never calls in sick.</p>
             </div>
           </div>
         </div>
@@ -371,5 +367,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
