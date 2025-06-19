@@ -16,6 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
 import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
+import { IntegrationHub } from "@/components/ui/integration-hub";
 import { motion } from 'framer-motion';
 
 const Index = () => {
@@ -50,19 +51,6 @@ const Index = () => {
       [field]: value
     }));
   };
-
-  const integrationLogos = [
-    { name: 'Zapier', logo: '⚡' },
-    { name: 'Make', logo: '🔧' },
-    { name: 'n8n', logo: '🔗' },
-    { name: 'GoHighLevel', logo: 'GHL' },
-    { name: 'Roofr', logo: '🏠' },
-    { name: 'Aqulinx', logo: '💧' },
-    { name: 'Podium', logo: '🏆' },
-    { name: 'HubSpot', logo: '🎯' },
-    { name: 'Salesforce', logo: '☁️' },
-    { name: 'Pipedrive', logo: '📊' }
-  ];
 
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5] overflow-x-hidden">
@@ -298,103 +286,8 @@ const Index = () => {
       {/* AI Showcase Section */}
       <AIShowcase />
 
-      {/* CRM Integration Carousel Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-[#20215A]/50 to-[#6233EA]/30">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h2 
-            style={{
-              fontFamily: 'Audiowide, sans-serif'
-            }} 
-            className="text-4xl font-bold mb-12 text-[#00E5D6] md:text-4xl"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Seamless Integration With Your Tech Stack
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl mb-12 text-[#D3D4FF]" 
-            style={{
-              fontFamily: 'Manrope, sans-serif'
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            We connect with the tools you already use
-          </motion.p>
-          
-          <motion.div 
-            className="relative max-w-4xl mx-auto"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {integrationLogos.map((integration, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                    <motion.div 
-                      className="p-1"
-                      initial={{ 
-                        opacity: 0, 
-                        x: index % 2 === 0 ? -100 : 100 
-                      }}
-                      whileInView={{ 
-                        opacity: 1, 
-                        x: 0 
-                      }}
-                      transition={{ 
-                        duration: 0.6, 
-                        delay: index * 0.1,
-                        ease: "easeOut"
-                      }}
-                      viewport={{ once: true }}
-                      whileHover={{ 
-                        scale: 1.05,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      <Card className="bg-[#F5F5F5]/10 border-[#E536C1]/30 backdrop-blur-sm hover:bg-[#F5F5F5]/20 transition-all duration-300">
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <div className="text-center">
-                            <motion.div 
-                              className="text-4xl mb-2"
-                              whileHover={{ 
-                                rotate: [0, -10, 10, 0],
-                                transition: { duration: 0.5 }
-                              }}
-                            >
-                              {integration.logo}
-                            </motion.div>
-                            <div className="text-[#00E5D6] text-sm font-bold" style={{
-                              fontFamily: 'Audiowide, sans-serif'
-                            }}>
-                              {integration.name}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="border-[#00E5D6]/30 text-[#00E5D6] hover:bg-[#00E5D6]/20" />
-              <CarouselNext className="border-[#00E5D6]/30 text-[#00E5D6] hover:bg-[#00E5D6]/20" />
-            </Carousel>
-          </motion.div>
-        </div>
-      </section>
+      {/* CRM Integration Hub Section - Replaced */}
+      <IntegrationHub />
 
       {/* Testimonials Section */}
       <PremiumTestimonials />
