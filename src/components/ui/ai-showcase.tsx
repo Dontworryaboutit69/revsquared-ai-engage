@@ -23,7 +23,7 @@ const showcaseItems: ShowcaseItem[] = [
   {
     id: 'roofing-inbound',
     title: 'Inbound Call Agent',
-    description: 'AI agent that handles incoming calls for a roofing company, qualifying leads and booking appointments 24/7.',
+    description: 'Watch this AI turn a skeptical caller into a $12K roofing job in under 4 minutes. Handles price objections, schedules estimates, and sends follow-up texts automatically.',
     industry: 'Roofing Company',
     type: 'inbound',
     audioUrl: '/audio/roofing-inbound-demo.mp3', // You'll need to add actual audio files
