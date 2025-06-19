@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -140,7 +141,7 @@ const Index = () => {
               onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
             >
               <Calendar className="w-5 h-5 mr-2" />
-              Book Demo Call
+              Book Free Demo
             </Button>
             <Button
               size="lg"
@@ -149,7 +150,7 @@ const Index = () => {
               onClick={() => setShowTryAIForm(true)}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Try AI Now
+              Get AI Demo Call
             </Button>
           </div>
         </div>
@@ -226,7 +227,7 @@ const Index = () => {
             <p className="text-xl text-[#D3D4FF] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
               Sound familiar? Let's fix this together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               <Button
                 size="lg"
                 className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
@@ -234,7 +235,7 @@ const Index = () => {
                 onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                Book Demo Call
+                Book Free Demo - 15 Minutes, No Pressure
               </Button>
               <Button
                 size="lg"
@@ -243,7 +244,7 @@ const Index = () => {
                 onClick={() => setShowTryAIForm(true)}
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Try AI Now
+                Get AI Demo Call - Live Proof in 5 Minutes
               </Button>
             </div>
           </div>
@@ -311,7 +312,7 @@ const Index = () => {
             <p className="text-xl text-[#D3D4FF] mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
               Ready to see it in action?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               <Button
                 size="lg"
                 className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
@@ -319,7 +320,7 @@ const Index = () => {
                 onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                Book Demo Call
+                Book Free Demo
               </Button>
               <Button
                 size="lg"
@@ -328,7 +329,7 @@ const Index = () => {
                 onClick={() => setShowTryAIForm(true)}
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Try AI Now
+                Get AI Demo Call
               </Button>
             </div>
           </div>
@@ -342,12 +343,12 @@ const Index = () => {
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#FEDD4D]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
-            Experience the Difference Yourself
+            Want to hear your industry?
           </h3>
           <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
             Don't just take our word for it - see how our AI agents can transform your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
             <Button
               size="lg"
               className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
@@ -355,7 +356,7 @@ const Index = () => {
               onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
             >
               <Calendar className="w-4 h-4 mr-2" />
-              Book Demo Call
+              Book Free Demo
             </Button>
             <Button
               size="lg"
@@ -364,7 +365,7 @@ const Index = () => {
               onClick={() => setShowTryAIForm(true)}
             >
               <Phone className="w-4 h-4 mr-2" />
-              Try AI Now
+              Get AI Demo Call
             </Button>
           </div>
         </div>
@@ -373,19 +374,16 @@ const Index = () => {
       {/* CRM Integration Hub Section - Replaced */}
       <IntegrationHub />
 
-      {/* Testimonials Section */}
-      <PremiumTestimonials />
-
-      {/* CTA After Testimonials */}
+      {/* CTA After Integration Hub */}
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#00E5D6]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
-            Join These Success Stories
+            Ready to integrate?
           </h3>
           <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Your business could be the next success story. Let's make it happen.
+            Connect your existing systems and see the magic happen.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
             <Button
               size="lg"
               className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
@@ -393,7 +391,7 @@ const Index = () => {
               onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
             >
               <Calendar className="w-4 h-4 mr-2" />
-              Book Demo Call
+              Book Free Demo
             </Button>
             <Button
               size="lg"
@@ -402,7 +400,42 @@ const Index = () => {
               onClick={() => setShowTryAIForm(true)}
             >
               <Phone className="w-4 h-4 mr-2" />
-              Try AI Now
+              Get AI Demo Call
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <PremiumTestimonials />
+
+      {/* CTA After Testimonials */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#00E5D6]" style={{ fontFamily: 'Audiowide, sans-serif' }}>
+            Ready to get started?
+          </h3>
+          <p className="text-lg text-[#D3D4FF] mb-8" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            Your business could be the next success story. Let's make it happen.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <Button
+              size="lg"
+              className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => window.open('https://calendly.com/your-calendar-link', '_blank')}
+            >
+              <Calendar className="w-4 h-4 mr-2" />
+              Book Free Demo
+            </Button>
+            <Button
+              size="lg"
+              className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 px-6"
+              style={{ fontFamily: 'Audiowide, sans-serif' }}
+              onClick={() => setShowTryAIForm(true)}
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Get AI Demo Call
             </Button>
           </div>
         </div>
