@@ -107,6 +107,13 @@ const Index = () => {
           }}>Trusted By Over 45 Businesses Just Like Yours</p>
           </div>
           
+          {/* See How It Works Text */}
+          <h3 className="text-3xl md:text-4xl font-bold mb-6 text-[#FEDD4D]" style={{
+            fontFamily: 'Audiowide, sans-serif'
+          }}>
+            See How It Actually Works.
+          </h3>
+          
           {/* Video Component Placeholder */}
           <div className="mb-12 max-w-4xl mx-auto">
             <div className="aspect-video bg-gradient-to-br from-[#6233EA] to-[#20215A] rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 flex items-center justify-center">
@@ -369,4 +376,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
