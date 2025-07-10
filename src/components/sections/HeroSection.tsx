@@ -80,7 +80,7 @@ export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
         <div className="mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
           <div className="aspect-video rounded-xl sm:rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 overflow-hidden">
             <iframe
-              src="https://www.youtube.com/embed/neC-Z1o8wU8"
+              src="https://www.youtube.com/embed/neC-Z1o8wU8?rel=0"
               title="RevSquared AI Demo"
               className="w-full h-full"
               frameBorder="0"
