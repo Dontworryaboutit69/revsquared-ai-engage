@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Loader2 } from 'lucide-react';
+import { supabase } from "@/integrations/supabase/client";
 
 interface TryAIFormProps {
   open: boolean;
@@ -26,17 +27,38 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // Save form submission to Supabase
+      const { error } = await supabase
+        .from('form_submissions')
+        .insert({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          company: formData.company || null
+        });
 
-    toast({
-      title: "Demo Call Scheduled!",
-      description: "Our AI will call you within the next 5 minutes to demonstrate our capabilities."
-    });
+      if (error) {
+        throw error;
+      }
 
-    setIsLoading(false);
-    onOpenChange(false);
-    setFormData({ name: '', phone: '', email: '', company: '' });
+      toast({
+        title: "Demo Call Scheduled!",
+        description: "Our AI will call you within the next 5 minutes to demonstrate our capabilities."
+      });
+
+      onOpenChange(false);
+      setFormData({ name: '', phone: '', email: '', company: '' });
+    } catch (error) {
+      console.error('Error saving form submission:', error);
+      toast({
+        title: "Error",
+        description: "Failed to schedule demo call. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const updateFormData = (field: string, value: string) => {
