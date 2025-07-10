@@ -78,17 +78,15 @@ export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
         
         {/* Video Component Placeholder */}
         <div className="mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
-          <div className="aspect-video bg-gradient-to-br from-[#6233EA] to-[#20215A] rounded-xl sm:rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 flex items-center justify-center">
-            <div className="text-center px-4">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-[#E536C1] rounded-full flex items-center justify-center mb-3 sm:mb-4 mx-auto">
-                <div className="w-0 h-0 border-l-[8px] sm:border-l-[10px] md:border-l-[12px] border-l-transparent border-r-[8px] sm:border-r-[10px] md:border-r-[12px] border-r-transparent border-b-[14px] sm:border-b-[17px] md:border-b-[20px] border-b-[#F5F5F5] ml-1" />
-              </div>
-              <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
-              fontFamily: 'Manrope, sans-serif'
-            }}>
-                Watch How AI Transforms Your Business
-              </p>
-            </div>
+          <div className="aspect-video rounded-xl sm:rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/neC-Z1o8wU8"
+              title="RevSquared AI Demo"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </div>
 
