@@ -44,6 +44,29 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
         throw error;
       }
 
+      // Send data to webhook
+      try {
+        await fetch('https://services.leadconnectorhq.com/hooks/MDB4H4sAI71Jzos2up6b/webhook-trigger/8b489481-513b-4b6d-8081-14573202f3c0', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            phone: formData.phone,
+            email: formData.email,
+            company: formData.company,
+            timestamp: new Date().toISOString(),
+            source: 'AI Demo Form'
+          }),
+        });
+      } catch (webhookError) {
+        console.error('Webhook error:', webhookError);
+        // Don't fail the form submission if webhook fails
+      }
+
       toast({
         title: "Demo Call Scheduled!",
         description: "Our AI will call you within the next 5 minutes to demonstrate our capabilities."
