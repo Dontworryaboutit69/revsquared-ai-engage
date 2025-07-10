@@ -174,6 +174,82 @@ export function IntegrationHub() {
           .node-10 { top: 45%; left: 3%; transform: scale(0.5); }
           .node-11 { top: 25%; left: 8%; transform: scale(0.5); }
           .node-12 { top: 12%; left: 18%; transform: scale(0.5); }
+
+          /* Connection Lines Animation */
+          .connection-line {
+            transition: opacity 0.8s ease, stroke-dashoffset 0.8s ease;
+            stroke-dashoffset: 100;
+          }
+
+          .connection-line.visible {
+            opacity: 0.6 !important;
+            animation: drawLine 1.5s ease-out forwards, dataFlow 3s ease-in-out infinite;
+          }
+
+          @keyframes drawLine {
+            from {
+              stroke-dashoffset: 100;
+              opacity: 0;
+            }
+            to {
+              stroke-dashoffset: 0;
+              opacity: 0.6;
+            }
+          }
+
+          @keyframes dataFlow {
+            0%, 100% { 
+              stroke-dashoffset: 0; 
+              opacity: 0.6;
+            }
+            50% { 
+              stroke-dashoffset: -20; 
+              opacity: 0.8;
+            }
+          }
+
+          /* Data Particles Animation */
+          .data-particle {
+            transition: opacity 0.5s ease;
+          }
+
+          .data-particle.visible {
+            opacity: 0.8 !important;
+            animation: particleGlow 2s ease-in-out infinite;
+          }
+
+          @keyframes particleGlow {
+            0%, 100% { 
+              opacity: 0.8;
+              filter: drop-shadow(0 0 4px #00E5D6);
+            }
+            50% { 
+              opacity: 1;
+              filter: drop-shadow(0 0 8px #00E5D6);
+            }
+          }
+
+          /* Enhanced Node Animations */
+          .integration-node.visible {
+            opacity: 1;
+            transform: scale(1);
+            animation: nodeAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          }
+
+          @keyframes nodeAppear {
+            0% {
+              opacity: 0;
+              transform: scale(0.3) rotateY(180deg);
+            }
+            50% {
+              opacity: 0.8;
+              transform: scale(1.1) rotateY(90deg);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1) rotateY(0deg);
+            }
+          }
         `}
       </style>
       
@@ -190,6 +266,102 @@ export function IntegrationHub() {
         </p>
 
         <div className="web-container" ref={containerRef}>
+          {/* Connection Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 10 }}>
+            {/* Dynamic connection lines */}
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((nodeNum) => (
+              <g key={nodeNum}>
+                <line
+                  className={`connection-line connection-${nodeNum} ${isExpanded ? 'visible' : ''}`}
+                  x1="50%"
+                  y1="50%"
+                  x2={
+                    nodeNum === 1 ? "50%" :
+                    nodeNum === 2 ? "82%" :
+                    nodeNum === 3 ? "92%" :
+                    nodeNum === 4 ? "97%" :
+                    nodeNum === 5 ? "92%" :
+                    nodeNum === 6 ? "82%" :
+                    nodeNum === 7 ? "50%" :
+                    nodeNum === 8 ? "18%" :
+                    nodeNum === 9 ? "8%" :
+                    nodeNum === 10 ? "3%" :
+                    nodeNum === 11 ? "8%" : "18%"
+                  }
+                  y2={
+                    nodeNum === 1 ? "5%" :
+                    nodeNum === 2 ? "12%" :
+                    nodeNum === 3 ? "25%" :
+                    nodeNum === 4 ? "45%" :
+                    nodeNum === 5 ? "75%" :
+                    nodeNum === 6 ? "88%" :
+                    nodeNum === 7 ? "95%" :
+                    nodeNum === 8 ? "88%" :
+                    nodeNum === 9 ? "75%" :
+                    nodeNum === 10 ? "45%" :
+                    nodeNum === 11 ? "25%" : "12%"
+                  }
+                  stroke="url(#gradient-line)"
+                  strokeWidth="2"
+                  strokeDasharray="4 4"
+                  opacity="0"
+                />
+                {/* Data flow particles */}
+                <circle
+                  className={`data-particle particle-${nodeNum} ${isExpanded ? 'visible' : ''}`}
+                  r="3"
+                  fill="#00E5D6"
+                  opacity="0"
+                >
+                  <animateMotion
+                    dur="3s"
+                    repeatCount="indefinite"
+                    begin={`${nodeNum * 0.25}s`}
+                  >
+                    <mpath href={`#path-${nodeNum}`} />
+                  </animateMotion>
+                </circle>
+                <path
+                  id={`path-${nodeNum}`}
+                  d={`M 50% 50% L ${
+                    nodeNum === 1 ? "50%" :
+                    nodeNum === 2 ? "82%" :
+                    nodeNum === 3 ? "92%" :
+                    nodeNum === 4 ? "97%" :
+                    nodeNum === 5 ? "92%" :
+                    nodeNum === 6 ? "82%" :
+                    nodeNum === 7 ? "50%" :
+                    nodeNum === 8 ? "18%" :
+                    nodeNum === 9 ? "8%" :
+                    nodeNum === 10 ? "3%" :
+                    nodeNum === 11 ? "8%" : "18%"
+                  } ${
+                    nodeNum === 1 ? "5%" :
+                    nodeNum === 2 ? "12%" :
+                    nodeNum === 3 ? "25%" :
+                    nodeNum === 4 ? "45%" :
+                    nodeNum === 5 ? "75%" :
+                    nodeNum === 6 ? "88%" :
+                    nodeNum === 7 ? "95%" :
+                    nodeNum === 8 ? "88%" :
+                    nodeNum === 9 ? "75%" :
+                    nodeNum === 10 ? "45%" :
+                    nodeNum === 11 ? "25%" : "12%"
+                  }`}
+                  fill="none"
+                  stroke="none"
+                />
+              </g>
+            ))}
+            <defs>
+              <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00E5D6" stopOpacity="0.8"/>
+                <stop offset="50%" stopColor="#E536C1" stopOpacity="0.6"/>
+                <stop offset="100%" stopColor="#6233EA" stopOpacity="0.4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
           {/* Central RevSquared AI Hub */}
           <div 
             className="center-hub" 
@@ -212,7 +384,7 @@ export function IntegrationHub() {
               opacity: isExpanded ? 0 : 0.8,
               transition: 'opacity 0.3s ease'
             }}>
-              Hover to explore integrations
+              Hover to see integrations
             </div>
           </div>
 
