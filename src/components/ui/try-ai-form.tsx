@@ -45,23 +45,30 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
       }
 
       // Send data to webhook
+      console.log('Sending data to webhook...');
       try {
-        await fetch('https://services.leadconnectorhq.com/hooks/MDB4H4sAI71Jzos2up6b/webhook-trigger/8b489481-513b-4b6d-8081-14573202f3c0', {
+        const webhookData = {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          phone: formData.phone,
+          email: formData.email,
+          company: formData.company,
+          timestamp: new Date().toISOString(),
+          source: 'AI Demo Form'
+        };
+        
+        console.log('Webhook payload:', webhookData);
+        
+        const webhookResponse = await fetch('https://services.leadconnectorhq.com/hooks/MDB4H4sAI71Jzos2up6b/webhook-trigger/8b489481-513b-4b6d-8081-14573202f3c0', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          mode: 'no-cors',
-          body: JSON.stringify({
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            phone: formData.phone,
-            email: formData.email,
-            company: formData.company,
-            timestamp: new Date().toISOString(),
-            source: 'AI Demo Form'
-          }),
+          body: JSON.stringify(webhookData),
         });
+        
+        console.log('Webhook response status:', webhookResponse.status);
+        console.log('Webhook sent successfully');
       } catch (webhookError) {
         console.error('Webhook error:', webhookError);
         // Don't fail the form submission if webhook fails
