@@ -4,6 +4,7 @@ import { useToast } from "@/hooks/use-toast";
 import { PremiumTestimonials } from "@/components/ui/premium-testimonials";
 import { AIShowcase } from "@/components/ui/ai-showcase";
 import { TryAIForm } from "@/components/ui/try-ai-form";
+import { CalendarBookingDialog } from "@/components/ui/calendar-booking-dialog";
 import { IntegrationHub } from "@/components/ui/integration-hub";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
@@ -14,9 +15,10 @@ import { Footer } from "@/components/sections/Footer";
 const Index = () => {
   const { toast } = useToast();
   const [showTryAIForm, setShowTryAIForm] = useState(false);
+  const [showCalendarDialog, setShowCalendarDialog] = useState(false);
 
   const handleBookDemo = () => {
-    window.open('https://calendly.com/your-calendar-link', '_blank');
+    setShowCalendarDialog(true);
   };
 
   const handleTryAI = () => {
@@ -43,6 +45,7 @@ const Index = () => {
       </div>
       <CTASection onBookDemo={handleBookDemo} onTryAI={handleTryAI} />
       <TryAIForm open={showTryAIForm} onOpenChange={setShowTryAIForm} />
+      <CalendarBookingDialog open={showCalendarDialog} onOpenChange={setShowCalendarDialog} />
       <Footer />
     </div>
   );
