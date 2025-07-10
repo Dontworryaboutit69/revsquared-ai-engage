@@ -1,5 +1,11 @@
 
 import React from 'react';
+import hubspotLogo from '@/assets/logos/hubspot.svg';
+import salesforceLogo from '@/assets/logos/salesforce.svg';
+import zapierLogo from '@/assets/logos/zapier.svg';
+import slackLogo from '@/assets/logos/slack.svg';
+import whatsappLogo from '@/assets/logos/whatsapp.svg';
+import gmailLogo from '@/assets/logos/gmail.svg';
 
 export function IntegrationHub() {
   return (
@@ -67,12 +73,12 @@ export function IntegrationHub() {
             <div className="p-8">
               <div className="grid grid-cols-6 gap-4 mb-8">
                 {[
-                  { name: 'HubSpot', icon: 'H', color: '#ff7a59' },
-                  { name: 'Salesforce', icon: 'SF', color: '#00a1e0' },
-                  { name: 'Zapier', icon: 'Z', color: '#ff4a00' },
-                  { name: 'Slack', icon: 'S', color: '#4A154B' },
-                  { name: 'WhatsApp', icon: 'W', color: '#25d366' },
-                  { name: 'Gmail', icon: 'G', color: '#ea4335' }
+                  { name: 'HubSpot', logo: hubspotLogo, color: '#ff7a59' },
+                  { name: 'Salesforce', logo: salesforceLogo, color: '#00a1e0' },
+                  { name: 'Zapier', logo: zapierLogo, color: '#ff4a00' },
+                  { name: 'Slack', logo: slackLogo, color: '#4A154B' },
+                  { name: 'WhatsApp', logo: whatsappLogo, color: '#25d366' },
+                  { name: 'Gmail', logo: gmailLogo, color: '#ea4335' }
                 ].map((platform, index) => (
                   <div 
                     key={platform.name}
@@ -80,11 +86,12 @@ export function IntegrationHub() {
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="aspect-square bg-[#1A1A2E]/50 rounded-2xl border border-[#00E5D6]/10 hover:border-[#E536C1]/30 transition-all duration-300 group-hover:scale-105 flex flex-col items-center justify-center p-4">
-                      <div 
-                        className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm mb-2"
-                        style={{ backgroundColor: platform.color }}
-                      >
-                        {platform.icon}
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-2 p-2 bg-white/10">
+                        <img 
+                          src={platform.logo} 
+                          alt={`${platform.name} logo`}
+                          className="w-full h-full object-contain filter brightness-0 invert"
+                        />
                       </div>
                       <div className="text-xs text-[#D3D4FF]/80 text-center font-medium">
                         {platform.name}
