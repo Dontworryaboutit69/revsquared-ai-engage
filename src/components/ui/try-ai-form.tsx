@@ -17,7 +17,8 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     phone: '',
     email: '',
     company: ''
@@ -32,7 +33,8 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
       const { error } = await supabase
         .from('form_submissions')
         .insert({
-          name: formData.name,
+          first_name: formData.firstName,
+          last_name: formData.lastName || null,
           phone: formData.phone,
           email: formData.email,
           company: formData.company || null
@@ -48,7 +50,7 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
       });
 
       onOpenChange(false);
-      setFormData({ name: '', phone: '', email: '', company: '' });
+      setFormData({ firstName: '', lastName: '', phone: '', email: '', company: '' });
     } catch (error) {
       console.error('Error saving form submission:', error);
       toast({
@@ -85,30 +87,43 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="name" className="text-[#00E5D6] font-semibold">
-                Full Name *
+              <Label htmlFor="firstName" className="text-[#00E5D6] font-semibold">
+                First Name *
               </Label>
               <Input
-                id="name"
-                value={formData.name}
-                onChange={e => updateFormData('name', e.target.value)}
+                id="firstName"
+                value={formData.firstName}
+                onChange={e => updateFormData('firstName', e.target.value)}
                 className="mt-1 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-white placeholder-[#D3D4FF]/70"
-                placeholder="John Doe"
+                placeholder="John"
                 required
               />
             </div>
             <div>
-              <Label htmlFor="company" className="text-[#00E5D6] font-semibold">
-                Company
+              <Label htmlFor="lastName" className="text-[#00E5D6] font-semibold">
+                Last Name
               </Label>
               <Input
-                id="company"
-                value={formData.company}
-                onChange={e => updateFormData('company', e.target.value)}
+                id="lastName"
+                value={formData.lastName}
+                onChange={e => updateFormData('lastName', e.target.value)}
                 className="mt-1 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-white placeholder-[#D3D4FF]/70"
-                placeholder="ABC Corp"
+                placeholder="Doe"
               />
             </div>
+          </div>
+
+          <div>
+            <Label htmlFor="company" className="text-[#00E5D6] font-semibold">
+              Company
+            </Label>
+            <Input
+              id="company"
+              value={formData.company}
+              onChange={e => updateFormData('company', e.target.value)}
+              className="mt-1 bg-[#0D0D0D]/50 border-[#E536C1]/30 text-white placeholder-[#D3D4FF]/70"
+              placeholder="ABC Corp"
+            />
           </div>
 
           <div>
