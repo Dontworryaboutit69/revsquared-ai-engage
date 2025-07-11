@@ -17,13 +17,13 @@ export function HeroSection({
           <img src="/lovable-uploads/d64a4e8e-0ca8-4662-b3ba-05c284992535.png" alt="RevSquared AI Logo" className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain" />
         </div>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" style={{
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#00E5D6] to-[#E536C1] bg-clip-text text-transparent" style={{
         fontFamily: 'Audiowide, sans-serif'
       }}>
           RevSquared AI
         </h1>
         
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl mb-6 sm:mb-8 text-[#D3D4FF] px-2" style={{
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-6 sm:mb-8 text-[#D3D4FF] px-2" style={{
         fontFamily: 'Audiowide, sans-serif'
       }}>White-Glove AI Agents That Handle Prospect Calls, Qualify Serious Buyers & Deliver Sales-Ready Leads To Your Team — 24/7</h2>
         
