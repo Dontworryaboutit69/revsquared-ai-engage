@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Users, Lightbulb, Calendar } from 'lucide-react';
+import { User, Users, Activity, Calendar } from 'lucide-react';
 interface ProblemSectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
@@ -58,17 +58,17 @@ export function ProblemSection({
           
           <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm sm:col-span-2 md:col-span-1">
             <CardHeader>
-              <Lightbulb className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
+              <Activity className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
               <CardTitle className="text-[#00E5D6] text-lg sm:text-xl md:text-2xl" style={{
               fontFamily: 'Audiowide, sans-serif'
             }}>
-                Inconsistent Qualification
+                Volume Overwhelms Your Best People
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Sarah asks different questions than Mike. Mike forgets to get the budget. Sarah books unqualified leads. Your pipeline becomes a guessing game instead of a predictable revenue machine.</p>
+            }}>Marketing just delivered 73 new leads. Your top performer is buried in callbacks from last week. That $45K prospect from Friday? They're probably signing with someone who actually answered their call.</p>
             </CardContent>
           </Card>
         </div>
