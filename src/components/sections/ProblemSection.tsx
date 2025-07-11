@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Users, Activity, Calendar } from 'lucide-react';
+import { Target, TrendingUp, Activity, Calendar } from 'lucide-react';
 interface ProblemSectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
@@ -42,17 +42,17 @@ export function ProblemSection({
           
           <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
             <CardHeader>
-              <Users className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
+              <TrendingUp className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
               <CardTitle className="text-[#00E5D6] text-lg sm:text-xl md:text-2xl" style={{
               fontFamily: 'Audiowide, sans-serif'
             }}>
-                Success Depends on Individual People
+                You Can't Scale Ad Spend Profitably
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Mike closes 40% of his leads. Sarah closes 15%. When Mike goes on vacation, revenue drops 30%. You're one sick day away from missing your monthly target because everything depends on the right person answering the phone.</p>
+            }}>Marketing wants to double the budget, but you're already drowning. You can only touch each lead once or twice before your team gets overwhelmed. Studies show it takes 7-12 touches to convert - you're leaving 70% of revenue on the table.</p>
             </CardContent>
           </Card>
           
