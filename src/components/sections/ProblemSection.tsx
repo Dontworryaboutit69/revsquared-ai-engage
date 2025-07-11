@@ -58,17 +58,17 @@ export function ProblemSection({
           
           <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm sm:col-span-2 md:col-span-1">
             <CardHeader>
-              <Activity className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
+              <Calendar className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
               <CardTitle className="text-[#00E5D6] text-lg sm:text-xl md:text-2xl" style={{
               fontFamily: 'Audiowide, sans-serif'
             }}>
-                Volume Overwhelms Your Best People
+                Leads Fall Through the Cracks
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Marketing just delivered 73 new leads. Your top performer is buried in callbacks from last week. That $45K prospect from Friday? They're probably signing with someone who actually answered their call.</p>
+            }}>That hot prospect from your trade show? No one followed up for 5 days. Your CRM shows 200 'maybe' leads that never got touched. You're sitting on a goldmine but don't have systems to mine it.</p>
             </CardContent>
           </Card>
         </div>
