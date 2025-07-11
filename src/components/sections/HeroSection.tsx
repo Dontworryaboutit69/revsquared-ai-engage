@@ -23,7 +23,7 @@ export function HeroSection({
           RevSquared AI
         </h1>
         
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-6 sm:mb-8 text-[#D3D4FF] px-2" style={{
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-6 sm:mb-8 text-[#D3D4FF] px-2 font-semibold" style={{
         fontFamily: 'Manrope, sans-serif'
       }}>White-Glove AI Agents That Handle Prospect Calls, Qualify Serious Buyers & Deliver Sales-Ready Leads To Your Team — 24/7</h2>
         
