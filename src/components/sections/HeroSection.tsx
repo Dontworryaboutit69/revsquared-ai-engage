@@ -71,7 +71,7 @@ export function HeroSection({
         {/* See How It Works Text */}
         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-[#FEDD4D] px-4" style={{
         fontFamily: 'Audiowide, sans-serif'
-      }}>See Companies Are Scaling Sales With AI</h3>
+      }}>See How Companies Are Scaling Sales With AI</h3>
         
         {/* Video Component Placeholder */}
         <div className="mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
