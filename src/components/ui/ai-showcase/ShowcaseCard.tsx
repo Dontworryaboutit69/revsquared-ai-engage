@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon, UserMinus } from 'lucide-react';
+import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShowcaseItem } from './types';
@@ -17,7 +17,7 @@ const typeIcons = {
   inbound: Phone,
   outbound: MessageSquare,
   support: HeadphonesIcon,
-  'follow-up': UserMinus
+  'follow-up': AlertTriangle
 };
 
 const typeColors = {
