@@ -31,17 +31,17 @@ export const showcaseItems: ShowcaseItem[] = [
     ]
   },
   {
-    id: 'lead-follow-up',
-    title: 'Leads Fall Through the Cracks',
-    description: 'That hot prospect from your trade show? No one followed up for 5 days. Your CRM shows 200 \'maybe\' leads that never got touched. You\'re sitting on a goldmine but don\'t have systems to mine it.',
-    industry: 'Sales & Lead Management',
-    type: 'follow-up',
-    audioUrl: '/audio/lead-follow-up-demo.mp3',
-    features: ['Automatic Follow-up', 'Lead Nurturing', 'CRM Integration', 'Conversion Tracking'],
+    id: 'alarm-security-support',
+    title: 'Technical Support Agent',
+    description: 'Our AI handles technical support calls for alarm system troubleshooting, monitoring center inquiries, and customer service. Provides instant responses to common issues while escalating complex matters to your technicians.',
+    industry: 'Alarm & Security Company',
+    type: 'support',
+    audioUrl: '/audio/alarm-security-support-demo.mp3',
+    features: ['System Diagnostics', 'Alarm Troubleshooting', 'Monitoring Support', 'Service Scheduling'],
     resultStats: [
-      { metric: 'Follow-up Rate', value: '100%' },
-      { metric: 'Lead Conversion', value: '+73%' },
-      { metric: 'Revenue Recovery', value: '+180%' }
+      { metric: 'Labor Cost Reduction', value: '80%' },
+      { metric: 'Revenue Increase', value: '30%' },
+      { metric: 'Call Resolution', value: '95%' }
     ]
   }
 ];
