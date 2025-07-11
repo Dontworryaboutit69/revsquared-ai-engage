@@ -58,7 +58,7 @@ export function SolutionSection({
             </h4>
             <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
             fontFamily: 'Manrope, sans-serif'
-          }}>Every AI agent learns your industry lingo, knows your pricing, and follows your exact sales process. While competitors use generic chatbots, you get an AI that sounds like your best salesperson - but never calls in sick.</p>
+          }}>Every AI agent learns your industry lingo, knows your pricing, and follows your exact sales process. While competitors use generic chatbots, you get an AI that sounds like your best salesperson – but never calls in sick. From AI implementation to strategic consulting, we're your complete growth partner.</p>
           </div>
         </div>
 
