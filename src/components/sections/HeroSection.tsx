@@ -1,16 +1,15 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, ArrowDown, Star } from 'lucide-react';
-
 interface HeroSectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
 }
-
-export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-12 sm:py-20">
+export function HeroSection({
+  onBookDemo,
+  onTryAI
+}: HeroSectionProps) {
+  return <section className="relative min-h-screen flex items-center justify-center px-4 py-12 sm:py-20">
       <div className="absolute inset-0 bg-gradient-to-br from-[#6233EA]/20 via-[#20215A]/30 to-[#0D0D0D]" />
       <div className="relative z-10 text-center max-w-6xl mx-auto">
         {/* Logo */}
@@ -26,7 +25,7 @@ export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
         
         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl mb-6 sm:mb-8 text-[#D3D4FF] px-2" style={{
         fontFamily: 'Audiowide, sans-serif'
-      }}>Voice &amp; SMS AI Agents That Handle Your Leads &amp; Grow Your Business While You Sleep</h2>
+      }}>White-Glove Voice & SMS AI Agents That Handle Your Leads & Grow Your Business While You Sleep</h2>
         
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4" style={{
         fontFamily: 'Manrope, sans-serif'
@@ -71,42 +70,29 @@ export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
         
         {/* See How It Works Text */}
         <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-[#FEDD4D] px-4" style={{
-          fontFamily: 'Audiowide, sans-serif'
-        }}>
+        fontFamily: 'Audiowide, sans-serif'
+      }}>
           See How It Actually Works.
         </h3>
         
         {/* Video Component Placeholder */}
         <div className="mb-6 sm:mb-8 max-w-4xl mx-auto px-4">
           <div className="aspect-video rounded-xl sm:rounded-2xl border-2 border-[#00E5D6] shadow-2xl shadow-[#00E5D6]/20 overflow-hidden">
-            <iframe
-              src="https://www.youtube.com/embed/neC-Z1o8wU8?rel=0"
-              title="RevSquared AI Demo"
-              className="w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <iframe src="https://www.youtube.com/embed/neC-Z1o8wU8?rel=0" title="RevSquared AI Demo" className="w-full h-full" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
           </div>
         </div>
 
         {/* CTA Buttons Under Video */}
         <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto mb-8 sm:mb-12 px-4">
-          <Button
-            size="lg"
-            className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105 w-full"
-            style={{ fontFamily: 'Audiowide, sans-serif' }}
-            onClick={onBookDemo}
-          >
+          <Button size="lg" className="bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg shadow-[#00E5D6]/30 transition-all duration-300 hover:shadow-[#00E5D6]/50 hover:scale-105 w-full" style={{
+          fontFamily: 'Audiowide, sans-serif'
+        }} onClick={onBookDemo}>
             <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             Book Free Demo
           </Button>
-          <Button
-            size="lg"
-            className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg shadow-[#E536C1]/30 transition-all duration-300 hover:shadow-[#E536C1]/50 hover:scale-105 w-full"
-            style={{ fontFamily: 'Audiowide, sans-serif' }}
-            onClick={onTryAI}
-          >
+          <Button size="lg" className="bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg shadow-[#E536C1]/30 transition-all duration-300 hover:shadow-[#E536C1]/50 hover:scale-105 w-full" style={{
+          fontFamily: 'Audiowide, sans-serif'
+        }} onClick={onTryAI}>
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             Get AI Demo Call
           </Button>
@@ -116,6 +102,5 @@ export function HeroSection({ onBookDemo, onTryAI }: HeroSectionProps) {
       <div className="absolute bottom-4 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-6 h-6 sm:w-8 sm:h-8 text-[#00E5D6]" />
       </div>
-    </section>
-  );
+    </section>;
 }
