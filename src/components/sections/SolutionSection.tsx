@@ -31,23 +31,23 @@ export function SolutionSection({ onBookDemo, onTryAI }: SolutionSectionProps) {
           }}>
               <li className="flex items-start">
                 <span className="text-[#00E5D6] mr-2 sm:mr-3 text-lg">✓</span>
-                Answer every call within 2 rings - even at 3 AM on Christmas
+                Qualify every lead with YOUR exact criteria - so closers focus on closing, not screening
               </li>
               <li className="flex items-start">
                 <span className="text-[#00E5D6] mr-2 sm:mr-3 text-lg">✓</span>
-                Qualify leads with perfect consistency using YOUR exact criteria
+                Follow up with leads 7-12 times automatically - so you can profitably scale ad spend
               </li>
               <li className="flex items-start">
                 <span className="text-[#00E5D6] mr-2 sm:mr-3 text-lg">✓</span>
-                Book appointments directly into your calendar (no double-bookings)
+                Call that trade show prospect within 5 minutes - so nothing falls through the cracks
               </li>
               <li className="flex items-start">
                 <span className="text-[#00E5D6] mr-2 sm:mr-3 text-lg">✓</span>
-                Send SMS follow-ups automatically within 60 seconds
+                Book appointments directly into your calendar with full context
               </li>
               <li className="flex items-start">
                 <span className="text-[#00E5D6] mr-2 sm:mr-3 text-lg">✓</span>
-                Integrate seamlessly with your existing CRM (zero headaches)
+                Integrate seamlessly with your CRM (zero setup headaches)
               </li>
             </ul>
           </div>
