@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon } from 'lucide-react';
+import { Play, Pause, Volume2, Phone, MessageSquare, HeadphonesIcon, UserMinus } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShowcaseItem } from './types';
@@ -16,13 +16,15 @@ interface ShowcaseCardProps {
 const typeIcons = {
   inbound: Phone,
   outbound: MessageSquare,
-  support: HeadphonesIcon
+  support: HeadphonesIcon,
+  'follow-up': UserMinus
 };
 
 const typeColors = {
   inbound: 'from-[#00E5D6] to-[#6233EA]',
   outbound: 'from-[#E536C1] to-[#FEDD4D]',
-  support: 'from-[#6233EA] to-[#00E5D6]'
+  support: 'from-[#6233EA] to-[#00E5D6]',
+  'follow-up': 'from-[#FEDD4D] to-[#E536C1]'
 };
 
 export function ShowcaseCard({ item, index, isPlaying, onPlayPause }: ShowcaseCardProps) {
