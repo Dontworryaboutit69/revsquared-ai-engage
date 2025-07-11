@@ -24,7 +24,7 @@ export function HeroSection({
         </h1>
         
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-6 sm:mb-8 text-[#D3D4FF] px-2" style={{
-        fontFamily: 'Audiowide, sans-serif'
+        fontFamily: 'Manrope, sans-serif'
       }}>White-Glove AI Agents That Handle Prospect Calls, Qualify Serious Buyers & Deliver Sales-Ready Leads To Your Team — 24/7</h2>
         
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4" style={{
