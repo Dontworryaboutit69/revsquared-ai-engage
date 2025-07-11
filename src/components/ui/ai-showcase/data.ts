@@ -31,17 +31,17 @@ export const showcaseItems: ShowcaseItem[] = [
     ]
   },
   {
-    id: 'security-support',
-    title: 'Technical Support Agent',
-    description: 'Hear how this AI walks customers through complex installations step-by-step. Customers rate it higher than human support - and it never gets frustrated.',
-    industry: 'Home Security Company',
-    type: 'support',
-    audioUrl: '/audio/security-support-demo.mp3',
-    features: ['24/7 Support', 'Installation Guidance', 'Troubleshooting', 'Ticket Escalation'],
+    id: 'lead-follow-up',
+    title: 'Leads Fall Through the Cracks',
+    description: 'That hot prospect from your trade show? No one followed up for 5 days. Your CRM shows 200 \'maybe\' leads that never got touched. You\'re sitting on a goldmine but don\'t have systems to mine it.',
+    industry: 'Sales & Lead Management',
+    type: 'follow-up',
+    audioUrl: '/audio/lead-follow-up-demo.mp3',
+    features: ['Automatic Follow-up', 'Lead Nurturing', 'CRM Integration', 'Conversion Tracking'],
     resultStats: [
-      { metric: 'Resolution Rate', value: '89%' },
-      { metric: 'Customer Satisfaction', value: '4.8/5' },
-      { metric: 'Support Costs', value: '-60%' }
+      { metric: 'Follow-up Rate', value: '100%' },
+      { metric: 'Lead Conversion', value: '+73%' },
+      { metric: 'Revenue Recovery', value: '+180%' }
     ]
   }
 ];

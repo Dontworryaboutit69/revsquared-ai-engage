@@ -4,7 +4,7 @@ export interface ShowcaseItem {
   title: string;
   description: string;
   industry: string;
-  type: 'inbound' | 'outbound' | 'support';
+  type: 'inbound' | 'outbound' | 'support' | 'follow-up';
   audioUrl?: string;
   features: string[];
   resultStats: {
