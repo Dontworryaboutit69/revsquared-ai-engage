@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Users, Activity, Calendar } from 'lucide-react';
+import { Target, Users, Activity, Calendar } from 'lucide-react';
 interface ProblemSectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
@@ -24,18 +24,18 @@ export function ProblemSection({
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
             <CardHeader>
-              <User className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
+              <Target className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
               <CardTitle className="text-[#00E5D6] text-lg sm:text-xl md:text-2xl" style={{
               fontFamily: 'Audiowide, sans-serif'
             }}>
-                You Can't Scale People Fast Enough
+                Your Closers Are Stuck Qualifying
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
             }}>
-                You need 3 more salespeople to handle demand, but good reps cost $80K+ and take 6 months to ramp up. Meanwhile, competitors with better systems are stealing deals while you're stuck in hiring hell.
+                Your $100K closer spends half his day asking 'Do you have budget?' instead of closing deals. Meanwhile, that $45K prospect from Friday is calling your competitor who actually has systems to handle qualification properly.
               </p>
             </CardContent>
           </Card>
