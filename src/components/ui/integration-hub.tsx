@@ -156,7 +156,7 @@ export function IntegrationHub() {
           fontFamily: 'Audiowide, sans-serif'
         }}>
             <span>🚀</span>
-            <span>DOne For You Integration With 1000+ Apps</span>
+            <span>Done For You Integration With 1000+ Apps</span>
           </div>
         </div>
       </div>
