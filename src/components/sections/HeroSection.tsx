@@ -29,7 +29,7 @@ export function HeroSection({
         
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4" style={{
         fontFamily: 'Manrope, sans-serif'
-      }}>Picture this: It's Saturday morning. You check your phone and see 3 new appointments booked, 2 quotes requested, and 5 leads qualified - all while you were offline. Our custom AI agents qualify prospects, book appointments, and integrate seamlessly with your CRM — 24/7/365.</p>
+      }}>Your sales team is at capacity, but leads keep coming. Meanwhile, our AI agents worked through 47 prospect calls, qualified 12 high-intent leads, booked 8 demos, and updated your CRM with detailed notes — all without any involvement from your team. Every morning, your sales manager gets a pipeline report of sales-ready prospects waiting to close.</p>
         
         {/* Social Proof Section */}
         <div className="mb-8 sm:mb-12 max-w-4xl mx-auto px-4">
