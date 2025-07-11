@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Microchip, Lightbulb, Calendar } from 'lucide-react';
+import { User, Users, Lightbulb, Calendar } from 'lucide-react';
 interface ProblemSectionProps {
   onBookDemo: () => void;
   onTryAI: () => void;
@@ -42,17 +42,17 @@ export function ProblemSection({
           
           <Card className="bg-[#20215A]/50 border-[#E536C1]/30 backdrop-blur-sm">
             <CardHeader>
-              <Microchip className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
+              <Users className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-[#FEDD4D] mx-auto mb-3 sm:mb-4" />
               <CardTitle className="text-[#00E5D6] text-lg sm:text-xl md:text-2xl" style={{
               fontFamily: 'Audiowide, sans-serif'
             }}>
-                Manual Follow-ups Fail
+                Success Depends on Individual People
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-[#D3D4FF] text-sm sm:text-base md:text-lg" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Your team goes home. Leads keep coming. By Monday, that hot prospect from Friday has already signed with someone else. You can't hire enough people to cover every hour, and you shouldn't have to.</p>
+            }}>Mike closes 40% of his leads. Sarah closes 15%. When Mike goes on vacation, revenue drops 30%. You're one sick day away from missing your monthly target because everything depends on the right person answering the phone.</p>
             </CardContent>
           </Card>
           
