@@ -33,7 +33,7 @@ export function CTASection({
               </h3>
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base flex-grow" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Book a no-pressure 15-minute demo where we'll show you exactly how AI agents work for companies doing $1-15M in revenue. No sales pitch - just proof it solves your specific bottlenecks.</p>
+            }}>Book a no-pressure demo where we'll show you exactly how AI agents work for companies doing $1-15M in revenue. No sales pitch - just proof it solves your specific bottlenecks.</p>
               <Button size="lg" className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 sm:py-4 text-sm sm:text-base mt-auto" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onBookDemo}>
