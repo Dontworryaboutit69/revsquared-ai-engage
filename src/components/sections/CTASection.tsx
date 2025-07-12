@@ -14,14 +14,10 @@ export function CTASection({
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#E536C1]" style={{
         fontFamily: 'Audiowide, sans-serif'
-      }}>
-          Ready to Transform Your Business?
-        </h2>
+      }}>Ready to Break Through Your Growth Bottleneck?</h2>
         <p className="text-base sm:text-lg md:text-xl text-[#D3D4FF] mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4" style={{
         fontFamily: 'Manrope, sans-serif'
-      }}>
-          Choose how you'd like to experience our AI agents - get a personalized demo or try it yourself right now.
-        </p>
+      }}>See exactly how AI agents solve the capacity constraints holding your company back. Choose your preferred way to experience the solution.</p>
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {/* Schedule Demo Card */}
@@ -37,7 +33,7 @@ export function CTASection({
               </h3>
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Book a no-pressure 15-minute demo where we'll show you exactly how AI agents work for businesses like yours. No sales pitch - just proof.</p>
+            }}>Book a no-pressure 15-minute demo where we'll show you exactly how AI agents work for companies doing $1-15M in revenue. No sales pitch - just proof it solves your specific bottlenecks.</p>
               <Button size="lg" className="w-full bg-[#00E5D6] text-[#0D0D0D] hover:bg-[#00E5D6]/90 font-bold py-3 sm:py-4 text-sm sm:text-base" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onBookDemo}>
@@ -60,7 +56,7 @@ export function CTASection({
               </h3>
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{
               fontFamily: 'Manrope, sans-serif'
-            }}>Want proof it actually works? Our AI will call you within 5 minutes to demonstrate its capabilities. Hear the difference yourself.</p>
+            }}>Want proof it actually works? Our AI will call you within 5 minutes to demonstrate exactly how it would handle prospects for your business. Hear the difference yourself.</p>
               <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 sm:py-4 text-sm sm:text-base" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onTryAI}>
