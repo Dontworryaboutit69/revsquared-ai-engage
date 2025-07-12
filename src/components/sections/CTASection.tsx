@@ -57,7 +57,7 @@ export function CTASection({
               <p className="text-[#D3D4FF] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{
               fontFamily: 'Manrope, sans-serif'
             }}>Want proof it actually works? Our AI will call you within 5 minutes to demonstrate exactly how it would handle prospects for your business. Hear the difference yourself.</p>
-              <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 sm:py-4 text-sm sm:text-base" style={{
+              <Button size="lg" className="w-full bg-[#E536C1] text-[#0D0D0D] hover:bg-[#E536C1]/90 font-bold py-3 sm:py-4 text-sm sm:text-base mt-2" style={{
               fontFamily: 'Audiowide, sans-serif'
             }} onClick={onTryAI}>
                 Get Live AI Demo
