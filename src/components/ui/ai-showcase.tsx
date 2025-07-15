@@ -10,14 +10,19 @@ export function AIShowcase() {
   const audioRefs = useRef<Record<string, HTMLAudioElement>>({});
 
   const handlePlayPause = (id: string, audioUrl?: string) => {
-    if (!audioUrl) return;
+    if (!audioUrl) {
+      console.log('No audio URL provided');
+      return;
+    }
 
+    console.log('Attempting to play audio:', audioUrl);
     const audio = audioRefs.current[id];
     
     if (playingId === id) {
       // Pause current audio
       if (audio) {
         audio.pause();
+        console.log('Audio paused');
       }
       setPlayingId(null);
     } else {
@@ -29,16 +34,34 @@ export function AIShowcase() {
 
       // Create or get audio element
       if (!audio) {
+        console.log('Creating new audio element for:', audioUrl);
         const newAudio = new Audio(audioUrl);
-        newAudio.addEventListener('ended', () => setPlayingId(null));
+        newAudio.addEventListener('ended', () => {
+          console.log('Audio ended');
+          setPlayingId(null);
+        });
+        newAudio.addEventListener('error', (e) => {
+          console.error('Audio error:', e);
+          setPlayingId(null);
+        });
+        newAudio.addEventListener('loadstart', () => {
+          console.log('Audio load started');
+        });
+        newAudio.addEventListener('canplay', () => {
+          console.log('Audio can play');
+        });
         audioRefs.current[id] = newAudio;
       }
 
       // Play new audio
-      audioRefs.current[id].play().catch(() => {
-        console.log('Audio playback failed - this is normal in preview mode');
+      console.log('Attempting to play audio...');
+      audioRefs.current[id].play().then(() => {
+        console.log('Audio playback started successfully');
+        setPlayingId(id);
+      }).catch((error) => {
+        console.error('Audio playback failed:', error);
+        setPlayingId(null);
       });
-      setPlayingId(id);
     }
   };
 
