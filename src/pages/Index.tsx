@@ -11,6 +11,7 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
+import { AudioUploader } from "@/components/AudioUploader";
 
 const Index = () => {
   const { toast } = useToast();
@@ -38,6 +39,10 @@ const Index = () => {
       </div>
       <div id="ai-showcase-section">
         <AIShowcase />
+      </div>
+      <div className="p-8 bg-gray-100">
+        <h3 className="text-lg font-semibold mb-4 text-black">Upload Audio File</h3>
+        <AudioUploader onUploadComplete={(url) => console.log('Audio uploaded:', url)} />
       </div>
       <IntegrationHub />
       <div id="testimonials-section">
