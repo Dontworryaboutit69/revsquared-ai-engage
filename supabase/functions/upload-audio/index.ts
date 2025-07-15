@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
     const { data, error } = await supabase.storage
       .from('audio-files')
       .upload(filename, audioBuffer, {
-        contentType: 'audio/mpeg',
+        contentType: 'audio/wav',
         cacheControl: '3600',
         upsert: true
       })

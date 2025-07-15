@@ -8,7 +8,7 @@ export const showcaseItems: ShowcaseItem[] = [
     description: 'Watch this AI turn leads into consultation bookings for cosmetic procedures. Handles sensitive questions about pricing and procedures with the perfect balance of professionalism and warmth.',
     industry: 'Plastic Surgery Office',
     type: 'outbound',
-    audioUrl: 'https://pvpdgsmmpggsfxxamcms.supabase.co/storage/v1/object/public/audio-files/plastic-surgery-outbound-demo.mp3',
+    audioUrl: 'https://pvpdgsmmpggsfxxamcms.supabase.co/storage/v1/object/public/audio-files/plastic-surgery-outbound-demo.wav',
     features: ['Consultation Booking', 'Procedure Information', 'Financing Options', 'Follow-up Sequences'],
     resultStats: [
       { metric: 'Contact Rate', value: '100%' },

@@ -20,7 +20,7 @@ export function AudioUploader({ onUploadComplete }: AudioUploaderProps) {
       const { data, error } = await supabase.functions.invoke('upload-audio', {
         body: {
           googleDriveId: '1OnWnpYMpa6Ea8gSio4NOIDQHg9cza8mh',
-          filename: 'plastic-surgery-outbound-demo.mp3'
+          filename: 'plastic-surgery-outbound-demo.wav'
         }
       });
 
