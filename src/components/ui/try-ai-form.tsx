@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Loader2 } from 'lucide-react';
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from 'react-router-dom';
 
 interface TryAIFormProps {
   open: boolean;
@@ -15,6 +16,7 @@ interface TryAIFormProps {
 
 export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -74,13 +76,11 @@ export function TryAIForm({ open, onOpenChange }: TryAIFormProps) {
         // Don't fail the form submission if webhook fails
       }
 
-      toast({
-        title: "Demo Call Scheduled!",
-        description: "Our AI will call you within the next 5 minutes to demonstrate our capabilities."
-      });
-
       onOpenChange(false);
       setFormData({ firstName: '', lastName: '', phone: '', email: '', company: '' });
+      
+      // Redirect to thank you page
+      navigate('/thank-you');
     } catch (error) {
       console.error('Error saving form submission:', error);
       toast({
